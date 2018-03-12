@@ -1,0 +1,227 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  # 50.0761200N, 14.4600775E
+  latitude: 50.07612
+  longitude: 14.46007
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 252
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Prague
+  # Customization file
+  customize: !include customize.yaml
+
+automation: !include automations.yaml
+binary_sensor: !include binary_sensor.yaml
+frontend: !include frontend.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+
+#alarm_control_panel:
+#  - platform: arlo
+
+#android_ip_webcam:
+#  - host: 192.168.0.157
+#    switches:
+#      - night_vision
+#      - torch
+#      - video_recording
+
+arlo:
+  username: !secret arlo_email
+  password: !secret arlo_password
+
+camera:
+  - platform: arlo
+    ffmpeg_arguments: '-pred 1 -q:v 2'
+
+# Enables configuration UI
+config:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+#customizer:
+#  custom_ui: local
+
+device_tracker:
+  - platform: upc_connect
+    consider_home: 60
+    hide_if_away: yes
+
+# Discover some devices automatically
+discovery:
+
+ffmpeg:
+
+# Used for Google Calendar
+google:
+  client_id: !secret google_id
+  client_secret: !secret google_secret
+
+# Used for Google Home
+#google_assistant:
+#  project_id: someproject-2d0b8
+#  client_id: !secret google_client_id
+#  access_token: !secret google_access_token
+#  agent_user_id: [a string to identify user]
+#  api_key: [an API Key generated for the Google Actions project]
+#  exposed_domains:
+#    - switch
+#    - light
+#    - group
+#    - climate
+#    - script
+
+# Enables support for tracking state changes over time
+history:
+
+history_graph:
+  crypto:
+    name: Profit
+    entities:
+      - sensor.crypto_usd_profit
+  humidity:
+    name: Humidity
+    entities:
+      - sensor.living_room_thermostat_humidity
+    hours_to_show: 24
+    refresh: 180
+  light_level:
+    name: "Light level"
+    entities:
+      - sensor.light_level_kitchen
+    hours_to_show: 24
+    refresh: 60
+  temperature:
+    name: Inside temperature
+    entities:
+      - sensor.living_room_thermostat_temperature
+      - sensor.temperature_kitchen
+      - sensor.temperature_hallway
+      - sensor.temperature_toilet
+    hours_to_show: 24
+    refresh: 180
+  outside_temperature:
+    name: "Outside temperature"
+    entities:
+      - sensor.weather_temperature
+    hours_to_show: 48
+    refresh: 180
+  washing_machine:
+    name: "Washing machine"
+    entities:
+      - sensor.washing_machine
+    hours_to_show: 3
+    refresh: 60
+  weight_matej:
+    name: "Weight Matěj"
+    entities:
+      - sensor.weight_matej
+    hours_to_show: 672
+    refresh: 360
+
+http:
+  api_password: !secret http_password
+  base_url: !secret http_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+hue:
+  bridges:
+    - host: 192.168.0.31
+
+ifttt:
+  key: !secret ifttt
+
+input_boolean:
+  camera_toggle:
+    name: "ARM / DISARM"
+    initial: off
+    icon: mdi:shield-half-full
+  alarm_toggle:
+    name: "ON / OFF"
+    initial: off
+    icon: mdi:flash
+  playstation_toggle:
+    name: "Playstation"
+    initial: off
+    icon: mdi:playstation
+  television_toggle:
+    name: "Television"
+    initial: off
+    icon: mdi:television
+
+input_select:
+  alarm:
+    name: Time
+    icon: mdi:alarm
+    initial: "07:40"
+    options:
+      - "07:00"
+      - "07:05"
+      - "07:10"
+      - "07:15"
+      - "07:20"
+      - "07:25"
+      - "07:30"
+      - "07:35"
+      - "07:40"
+      - "07:45"
+      - "07:50"
+      - "07:55"
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+# map:
+
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+
+notify:
+  - platform: html5
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+
+#panel_iframe:
+#  configurator:
+#    title: Configurator
+#    icon: mdi:wrench
+#    url: 'https://192.168.0.242:8321'
+
+remote:
+  - platform: harmony
+    name: TV
+    activity: Watch TV
+
+shopping_list:
+
+sun:
+
+timer:
+  5minutes:
+    duration: '00:05:00'
+
+# Text to speech
+tts:
+  - platform: google
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+zwave:
+  usb_path: /dev/ttyACM0
