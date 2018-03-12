@@ -1,0 +1,127 @@
+climate.living_room:
+  icon: mdi:thermometer-lines
+  friendly_name: Temperature
+
+group.temperature:
+  order: 41
+group.devices:
+  order: 42
+
+remote.harmony_hub:
+  icon: mdi:remote
+  friendly_name: Television
+
+script.arlo_arm:
+  icon: mdi:camcorder
+  friendly_name: ARM
+
+script.arlo_disarm:
+  icon: mdi:camcorder-off
+  friendly_name: DISARM
+
+script.good_night:
+  icon: mdi:sleep
+  friendly_name: Good night
+
+script.night_toilet:
+  icon: mdi:emoticon-poop
+  friendly_name: Night toilet
+
+script.temperature_high:
+  icon: mdi:arrow-collapse-up
+  friendly_name: Warm up
+
+script.temperature_low:
+  icon: mdi:arrow-collapse-down
+  friendly_name: Cool down
+
+sensor.arlo_q_online:
+  icon: mdi:camcorder
+  friendly_name: Arlo Q
+
+sensor.crypto_total_profit:
+  icon: mdi:finance
+  friendly_name: Profit
+
+sensor.crypto_usd_profit:
+  icon: mdi:credit-card
+  friendly_name: Profit
+
+sensor.google_home_online:
+  icon: mdi:google-home
+  friendly_name: Google Home
+
+sensor.living_room_thermostat_temperature:
+  friendly_name: Living room
+
+sensor.temperature_average:
+  icon: mdi:thermometer
+  friendly_name: Average
+
+sensor.temperature_hallway:
+  icon: mdi:thermometer
+  friendly_name: Hallway
+
+sensor.temperature_kitchen:
+  icon: mdi:thermometer
+  friendly_name: Kitchen
+
+sensor.temperature_toilet:
+  icon: mdi:thermometer
+  friendly_name: Toilet
+
+sensor.harmony_hub_online:
+  icon: mdi:remote
+  friendly_name: Harmony Hub
+
+sensor.living_room_thermostat_humidity:
+  icon: mdi:water
+  friendly_name: Humidity
+
+sensor.nest_thermostat_online:
+  icon: mdi:nest-thermostat
+  friendly_name: Nest Thermostat
+
+sensor.nest_protect_online:
+  icon: mdi:nest-protect
+  friendly_name: Nest Protect
+
+sensor.philips_hue_online:
+  icon: mdi:lightbulb
+  friendly_name: Philips Hue
+
+sensor.scale_online:
+  icon: mdi:scale-bathroom
+  friendly_name: Nokia Scale
+
+sensor.shield_online:
+  icon: mdi:google-controller
+  friendly_name: NVIDIA Shield
+
+sensor.upstairs_nest_protect_co_status:
+  icon: mdi:waves
+  friendly_name: CO status
+
+sensor.upstairs_nest_protect_smoke_status:
+  icon: mdi:fire
+  friendly_name: Smoke status
+
+sensor.upstairs_nest_protect_battery_health:
+  icon: mdi:battery-90
+  friendly_name: Battery health
+
+sensor.washing_machine:
+  icon: mdi:washing-machine
+  friendly_name: Washing machine
+
+sensor.washing_machine_online:
+  icon: mdi:washing-machine
+  friendly_name: Washing machine
+
+switch.fluxer:
+  icon: mdi:weather-night
+  friendly_name: Lights temperature
+
+switch.washing_machine_switch:
+  icon: mdi:washing-machine
+  friendly_name: Washing machine

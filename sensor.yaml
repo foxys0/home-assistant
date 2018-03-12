@@ -1,0 +1,189 @@
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+      - battery_level
+      - signal_strength
+
+  - platform: coinmarketcap
+    currency: Ripple
+  - platform: coinmarketcap
+    currency: Cardano
+  - platform: coinmarketcap
+    currency: Stellar
+  - platform: coinmarketcap
+    currency: Tron
+  - platform: coinmarketcap
+    currency: Ethereum
+
+  - platform: hue
+
+  - platform: template
+    sensors:
+      arlo_q_online:
+        value_template: >-
+            {%- if is_state("device_tracker.arlo_q", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      crypto_total_profit:
+        unit_of_measurement: "%"
+        value_template: >-
+            {{ ((((states.sensor.ripple.state | float * 574.24790843
+                + states.sensor.cardano.state | float * 260.739
+                + states.sensor.stellar.state | float * 549.45
+                + states.sensor.tron.state | float * 1998
+                + states.sensor.ethereum.state | float * 0.18)
+               / 1871.69) -1) *100) | round(1) }}
+      crypto_usd_profit:
+        unit_of_measurement: "$"
+        value_template: >-
+            {{ ((states.sensor.ripple.state | float * 574.24790843
+                + states.sensor.cardano.state | float * 260.739
+                + states.sensor.stellar.state | float * 549.45
+                + states.sensor.tron.state | float * 1998
+                + states.sensor.ethereum.state | float * 0.18)
+               - 1871.69) | round(1) }}
+      forecast:
+        friendly_name: "Forecast"
+        unit_of_measurement: °C
+        value_template: "{{ states.sensor.forecast_temperature.state }}"
+        icon_template: >-
+            {%- if states.sensor.forecast_symbol.state == "1" %} mdi:weather-sunny
+            {%- elif states.sensor.forecast_symbol.state in ["2", "3"] %} mdi:weather-partlycloudy
+            {%- elif states.sensor.forecast_symbol.state == "4" %} mdi:weather-cloudy
+            {%- elif states.sensor.forecast_symbol.state in ["40", "46"] %} mdi:weather-rainy
+            {%- elif states.sensor.forecast_symbol.state in ["5", "41", "9", "10"] %} mdi:weather-pouring
+            {%- elif states.sensor.forecast_symbol.state in ["24", "6", "25", "26", "20", "27", "28", "21", "29", "30", "22", "11", "31", "23", "32", "33", "14", "34"] %} mdi:weather-lightning-rainy
+            {%- elif states.sensor.forecast_symbol.state in ["42", "7", "43", "12", "48"] %} mdi:weather-snowy-rainy
+            {%- elif states.sensor.forecast_symbol.state in ["44", "8", "45", "49", "13", "50"] %} mdi:weather-snowy
+            {%- elif states.sensor.forecast_symbol.state == "15" %} mdi:weather-fog
+            {% endif %}
+      google_home_online:
+        value_template: >-
+            {%- if is_state("device_tracker.google_home", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      harmony_hub_online:
+        value_template: >-
+            {%- if is_state("device_tracker.harmony_hub", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      hvac_state:
+        friendly_name: "State"
+        value_template: "{{ states.sensor.living_room_thermostat_hvac_state.state }}"
+        icon_template: >-
+            {%- if is_state("sensor.living_room_thermostat_hvac_state", "heating") %}
+                mdi:toggle-switch
+            {% else %}
+                mdi:toggle-switch-off
+            {% endif %}
+      light_level_kitchen:
+        friendly_name: "Kitchen light"
+        value_template: '{{states.sensor.kitchen_motion_sensor.attributes.light_level}}'
+        unit_of_measurement: lm
+      nest_thermostat_online:
+        value_template: >-
+            {%- if is_state("binary_sensor.living_room_thermostat_online", "on") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      nest_protect_online:
+        value_template: >-
+            {%- if is_state("binary_sensor.upstairs_nest_protect_online", "on") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      philips_hue_online:
+        value_template: >-
+            {%- if is_state("device_tracker.philips_hue", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      scale_online:
+        value_template: >-
+            {%- if is_state("device_tracker.scale", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      shield_online:
+        value_template: >-
+            {%- if is_state("device_tracker.shield", "home") %}
+                On
+            {% else %}
+                Off
+            {% endif %}
+      temperature_average:
+        friendly_name: "Average"
+        unit_of_measurement: °C
+        value_template: >-
+            {{ ((states.sensor.living_room_thermostat_temperature.state | float +
+                 states.sensor.temperature_hallway.state | float  +
+                 states.sensor.temperature_kitchen.state | float  +
+                 states.sensor.temperature_toilet.state | float)
+               / 4) | round(1)}}
+      temperature_hallway:
+        value_template: '{{ (states.sensor.hallway_motion_sensor.attributes.temperature + 2.1) | round(1) }}'
+        unit_of_measurement: °C
+      temperature_kitchen:
+        value_template: '{{ (states.sensor.kitchen_motion_sensor.attributes.temperature + 2.8) | round(1) }}'
+        unit_of_measurement: °C
+      temperature_toilet:
+        value_template: '{{ (states.sensor.toilet_motion_sensor.attributes.temperature + 1.6) | round(1) }}'
+        unit_of_measurement: °C
+      washing_machine:
+        value_template: "{{ states.switch.washing_machine_switch.attributes.power_consumption | float }}"
+        unit_of_measurement: W
+      washing_machine_online:
+        value_template: "{{ states.switch.washing_machine_switch.state }}"
+      weather:
+        friendly_name: "Actual"
+        unit_of_measurement: °C
+        value_template: "{{ states.sensor.weather_temperature.state }}"
+        icon_template: >-
+            {%- if states.sensor.weather_symbol.state == "1" %} mdi:weather-sunny
+            {%- elif states.sensor.weather_symbol.state in ["2", "3"] %} mdi:weather-partlycloudy
+            {%- elif states.sensor.weather_symbol.state == "4" %} mdi:weather-cloudy
+            {%- elif states.sensor.weather_symbol.state in ["40", "46"] %} mdi:weather-rainy
+            {%- elif states.sensor.weather_symbol.state in ["5", "41", "9", "10"] %} mdi:weather-pouring
+            {%- elif states.sensor.weather_symbol.state in ["24", "6", "25", "26", "20", "27", "28", "21", "29", "30", "22", "11", "31", "23", "32", "33", "14", "34"] %} mdi:weather-lightning-rainy
+            {%- elif states.sensor.weather_symbol.state in ["42", "7", "43", "12", "48"] %} mdi:weather-snowy-rainy
+            {%- elif states.sensor.weather_symbol.state in ["44", "8", "45", "49", "13", "50"] %} mdi:weather-snowy
+            {%- elif states.sensor.weather_symbol.state == "15" %} mdi:weather-fog
+            {% endif %}
+
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_use_percent
+      - type: processor_use
+
+#  - platform: temper
+
+  - platform: uptime
+
+  - platform: yr
+    name: Forecast
+    forecast: 9
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+
+  - platform: yr
+    name: Weather
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation

@@ -1,0 +1,254 @@
+# VIEWS
+
+default_view:
+  view: yes
+  #name: Dashboard
+  icon: mdi:view-dashboard-variant
+  entities:
+    - group.light
+    - group.weather
+    - group.thermostat
+    - group.camera_buttons
+    - group.temperature
+    - group.smoke_detector
+    - device_tracker.matej
+    - device_tracker.martina
+
+buttons_view:
+  view: yes
+  #name: Buttons
+  icon: mdi:gesture-tap
+  entities:
+    - group.alarm
+    - group.buttons
+    - group.remote
+
+lights_view:
+  view: yes
+  #name: Lights
+  icon: mdi:lightbulb
+  entities:
+    - group.living_room
+    - group.upstairs
+    - group.kitchen
+    - group.bathroom
+    - group.toilet
+    - switch.fluxer
+
+media_view:
+  view: yes
+  #name: Media
+  icon: mdi:music-box-outline
+  entities:
+    - group.media
+
+graph_view:
+  view: yes
+  #name: Temperature
+  icon: mdi:chart-line
+  entities:
+    - history_graph.light_level
+    - history_graph.inside_temperature
+    - history_graph.humidity
+    - history_graph.outside_temperature
+    - history_graph.washing_machine
+    - history_graph.weight_matej
+
+camera_view:
+  view: yes
+  #name: Camera
+  icon: mdi:camcorder
+  entities:
+    - group.camera
+    - camera.camberbatch
+#    - group.camera_2
+#    - camera.ip_webcam
+
+crypto_view:
+  view: yes
+  #name: Crypto
+  icon: mdi:bitcoin
+  entities:
+    - group.crypto
+    - history_graph.profit
+
+status_view:
+  view: yes
+  icon: mdi:router-wireless
+  entities:
+    - group.device_status
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    - sensor.disk_use_percent_home
+    - sensor.uptime
+    - sensor.washing_machine
+
+# GROUPS
+
+alarm:
+  name: Alarm
+  icon: mdi:alarm
+  entities:
+    - input_select.alarm
+    - input_boolean.alarm_toggle
+
+bathroom:
+  name: Bathroom
+  icon: mdi:lightbulb
+  entities:
+    - light.bathroom_left
+    - light.bathroom_right
+
+buttons:
+  name: Automations
+  icon: mdi:cursor-pointer
+  control: hidden
+  entities:
+    - script.night_toilet
+    - script.good_night
+
+camera:
+  name: Camera
+  entities:
+    - sensor.arlo_cameras
+    - sensor.battery_level_camberbatch
+    - sensor.captured_today_camberbatch
+    - sensor.last_camberbatch
+    - sensor.signal_strength_camberbatch
+    - script.arlo_arm
+    - script.arlo_disarm
+
+#camera_2:
+#  name: "Camera 2"
+#  entities:
+#    - sensor.ip_webcam_audio_connections
+#    - sensor.ip_webcam_video_connections
+#    - switch.ip_webcam_night_vision
+#    - switch.ip_webcam_torch
+#    - switch.ip_webcam_video_recording
+
+camera_buttons:
+  name: Camera
+  control: hidden
+  entities:
+    - input_boolean.camera_toggle
+
+crypto:
+  name: Cryptocurrencies
+  entities:
+    - sensor.crypto_usd_profit
+    - sensor.crypto_total_profit
+    - sensor.ripple
+    - sensor.cardano
+    - sensor.stellar
+    - sensor.tron
+    - sensor.ethereum
+
+device_status:
+  name: Status
+  entities:
+    - sensor.arlo_q_online
+    - sensor.google_home_online
+    - sensor.harmony_hub_online
+    - sensor.nest_thermostat_online
+    - sensor.nest_protect_online
+    - sensor.philips_hue_online
+    - sensor.scale_online
+    - sensor.shield_online
+    - sensor.washing_machine_online
+
+kitchen:
+  name: Kitchen
+  icon: mdi:lightbulb
+  entities:
+    - light.kitchen_left_left
+    - light.kitchen_left
+    - light.kitchen_middle
+    - light.kitchen_right
+
+light:
+  name: Lights
+  entities:
+    - group.living_room
+    - group.upstairs
+    - group.kitchen
+    - group.bathroom
+    - group.toilet
+
+living_room:
+  name: Living room
+  icon: mdi:lightbulb
+  entities:
+    - light.angel
+    - light.left
+    - light.middle
+    - light.right
+
+media:
+  name: Media
+  icon: mdi:play-circle
+  entities:
+    - media_player.home
+    - media_player.shield
+#    - media_player.plex_web_chrome_2
+
+remote:
+  name: Remote
+  #icon: mdi:play-circle
+  control: hidden
+  entities:
+#    - remote.harmony_hub
+    - input_boolean.television_toggle
+    - input_boolean.playstation_toggle
+    - switch.washing_machine_switch
+    - script.devices_off
+
+smoke_detector:
+  name: Smoke & CO
+  icon: mdi:smoking
+  entities:
+    - sensor.upstairs_nest_protect_co_status
+    - sensor.upstairs_nest_protect_smoke_status
+    - sensor.upstairs_nest_protect_battery_health
+
+temperature:
+  name: Inside temperature
+  icon: mdi:thermometer
+  entities:
+    - sensor.temperature_average
+    - sensor.living_room_thermostat_temperature
+    - sensor.temper
+    - sensor.temperature_kitchen
+    - sensor.temperature_hallway
+    - sensor.temperature_toilet
+
+thermostat:
+  name: Thermostat
+  icon: mdi:thermometer
+  control: hidden
+  entities:
+    - climate.living_room
+    #- group.temperature
+    - sensor.living_room_thermostat_humidity
+    - sensor.hvac_state
+    - script.temperature_high
+    - script.temperature_low
+
+toilet:
+  name: Toilet
+  icon: mdi:lightbulb
+  entities:
+    - light.wc
+
+upstairs:
+  name: Upstairs
+  icon: mdi:lightbulb
+  entities:
+    - light.office
+
+weather:
+  name: Weather
+  icon: mdi:weather-cloudy
+  entities:
+    - sensor.weather
+    - sensor.forecast

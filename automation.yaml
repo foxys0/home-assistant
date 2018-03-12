@@ -1,0 +1,359 @@
+#ALARM by voice
+- action:
+  - data:
+      entity_id: script.google_home_on
+    service: script.turn_on
+  - data:
+      entity_id: media_player.home
+      message: "Wake up you lazy bitches"
+      language: "en-uk"
+    service: tts.google_say
+  - delay: 00:01:00
+  - data:
+      entity_id: script.google_home_off
+    service: script.turn_on
+  alias: "Morning alarm"
+  condition:
+    - condition: state
+      entity_id: input_boolean.alarm_toggle
+      state: 'on'
+    - condition: template
+      value_template: '{{ now().strftime("%H:%M") == states.input_select.alarm.state }}'
+  trigger:
+    - platform: time
+      minutes: '/1'
+      seconds: 0
+
+#ARLO ARM / DISARM by calendar
+- action:
+  - data_template:
+      entity_id: script.arlo_{{ states.calendar.camera.attributes.message | replace("#camera","") }}
+    service: script.turn_on
+  alias: Camera by calendar
+  condition: []
+  id: camera_by_calendar
+  trigger:
+  - entity_id: calendar.camera
+    from: 'off'
+    platform: state
+    to: 'on'
+
+#ARLO ARM
+- action:
+  - data:
+      entity_id: script.arlo_arm
+    service: script.turn_on
+  alias: Camera ARM by input
+  condition: []
+  id: camera_arm_by_input
+  trigger:
+  - entity_id: input_boolean.camera_toggle
+    from: 'off'
+    platform: state
+    to: 'on'
+
+#ARLO DISARM
+- action:
+  - data:
+      entity_id: script.arlo_disarm
+    service: script.turn_on
+  alias: Camera DISARM by input
+  condition: []
+  id: camera_disarm_by_input
+  trigger:
+  - entity_id: input_boolean.camera_toggle
+    from: 'on'
+    platform: state
+    to: 'off'
+
+#- action:
+#  - data:
+#      visible: true
+#    service: group.set_visibility
+#    entity_id: group.alarm
+#  - data:
+#      visible: true
+#    service: group.set_visibility
+#    entity_id: group.buttons
+#  alias: "Groups - SHOW"
+#  condition:
+#    - condition: time
+#      after: '20:00:00'
+#      before: '09:00:00'
+#  trigger:
+#    - platform: time
+#      minutes: '/1'
+#      seconds: 0
+
+#- action:
+#  - data:
+#      visible: false
+#    service: group.set_visibility
+#    entity_id: group.alarm
+#  - data:
+#      visible: false
+#    service: group.set_visibility
+#    entity_id: group.buttons
+#  alias: "Groups - HIDE"
+#  condition:
+#    - condition: time
+#      after: '09:00:00'
+#      before: '20:00:00'
+#  trigger:
+#    - platform: time
+#      minutes: '/1'
+#      seconds: 0
+
+#ENERGIZE by dimmer switch
+- action:
+  - data:
+      entity_id: script.energize
+    service: script.turn_on
+  alias: Energize by button
+  condition: []
+  id: energize_by_button
+  trigger:
+  - entity_id: sensor.kitchen_switch
+    platform: state
+    to: 2_click
+
+#LIGHTS OFF by dimmer switch
+- action:
+  - data:
+      entity_id: group.all_lights
+    service: light.turn_off
+  alias: Lights off by button
+  condition: []
+  id: lights_off_by_button
+  trigger:
+  - entity_id: sensor.kitchen_switch
+    platform: state
+    to: 3_click
+
+#SET AWAY by wifi connection
+- action:
+  - data:
+      entity_id: script.set_away
+    service: script.turn_on
+  alias: Set AWAY by location
+  condition: []
+  id: set_away_by_location
+  trigger:
+  - entity_id: binary_sensor.everyone_away
+    from: 'off'
+    platform: state
+    to: 'on'
+
+#SET HOME by wifi connection
+- action:
+  - data:
+      entity_id: script.set_home
+    service: script.turn_on
+  - data:
+      entity_id: script.google_home_on
+    service: script.turn_on
+  - data:
+      entity_id: media_player.home
+      message: "Welcome home"
+      language: "en-uk"
+    service: tts.google_say
+  - delay: 00:00:15
+  - data:
+      entity_id: script.google_home_off
+    service: script.turn_on
+  alias: Set HOME by location
+  condition: []
+  id: set_home_by_location
+  trigger:
+  - entity_id: binary_sensor.someone_at_home
+    from: 'off'
+    platform: state
+    to: 'on'
+
+#HEAT by calendar
+- action:
+  - data_template:
+      temperature: '{{ states.calendar.thermostat.attributes.message | replace(" #heat","")
+        | float}}'
+      entity_id: climate.living_room
+    service: climate.set_temperature
+  alias: Temperature by calendar
+  condition: []
+  id: temperature_by_calendar
+  trigger:
+  - entity_id: calendar.thermostat
+    from: 'off'
+    platform: state
+    to: 'on'
+
+#NIGHT TOILET by dimmer switch
+- action:
+  - data:
+      entity_id: script.night_toilet
+    service: script.turn_on
+  alias: Night toilet by button
+  condition: []
+#  condition:
+#  - condition: time
+#    weekday:
+#    - mon
+#    - tue
+#    - wed
+#    - thu
+#    - fri
+  id: night_toilet_by_button
+  trigger:
+  - entity_id: sensor.kitchen_switch
+    platform: state
+    to: 1_click
+
+#GOOD NIGHT by dimmer switch
+- action:
+  - data:
+      entity_id: input_boolean.alarm_toggle
+    service: input_boolean.turn_on
+  - data:
+      entity_id: script.good_night
+    service: script.turn_on
+  alias: Good night by button
+  condition: []
+  id: good_night_by_button
+  trigger:
+  - entity_id: sensor.kitchen_switch
+    platform: state
+    to: 4_click
+
+# HOME ASSISTANT update notification
+- action:
+  - data:
+      data:
+        tag: update
+      message: "Update for home assistant is ready"
+      title: Update
+    service: notify.notify
+  alias: HASS update
+  condition: []
+  id: hass_update
+  trigger:
+  - platform: state
+    entity_id: updater.updater
+
+# HOME ASSISTANT update by voice
+- action:
+  - data:
+      entity_id: script.google_home_on
+    service: script.turn_on
+  - data:
+      entity_id: media_player.home
+      message: "Update for home assistant is ready"
+      language: "en-uk"
+    service: tts.google_say
+  - delay: 00:00:15
+  - data:
+      entity_id: script.google_home_off
+    service: script.turn_on
+  alias: HASS update (voice)
+  condition:
+  - condition: sun
+    after: sunset
+  - condition: sun
+    before: sunrise
+  id: hass_update_voice
+  trigger:
+  - platform: state
+    entity_id: updater.updater
+
+#PLAYSTATION toggle
+- action:
+  - data:
+      entity_id: script.remote_playstation
+    service: script.turn_on
+  - data:
+      entity_id: input_boolean.television_toggle
+    service: input_boolean.turn_off
+  alias: Playstation ON by input
+  condition: []
+  id: playstation_on_by_input
+  trigger:
+  - entity_id: input_boolean.playstation_toggle
+    from: 'off'
+    platform: state
+    to: 'on'
+
+- action:
+  - data:
+      entity_id: remote.harmony_hub
+    service: remote.turn_off
+  alias: Playstation OFF by input
+  condition:
+    - condition: state
+      entity_id: input_boolean.television_toggle
+      state: 'off'
+  id: playstation_off_by_input
+  trigger:
+  - entity_id: input_boolean.playstation_toggle
+    from: 'on'
+    platform: state
+    to: 'off'
+
+#TELEVISION toggle
+- action:
+  - data:
+      entity_id: script.remote_television
+    service: script.turn_on
+  - data:
+      entity_id: input_boolean.playstation_toggle
+    service: input_boolean.turn_off
+  alias: Television ON by input
+  condition: []
+  id: television_on_by_input
+  trigger:
+  - entity_id: input_boolean.television_toggle
+    from: 'off'
+    platform: state
+    to: 'on'
+
+- action:
+  - data:
+      entity_id: remote.harmony_hub
+    service: remote.turn_off
+  alias: Television OFF by input
+  condition:
+    - condition: state
+      entity_id: input_boolean.playstation_toggle
+      state: 'off'
+  id: television_off_by_input
+  trigger:
+  - entity_id: input_boolean.television_toggle
+    from: 'on'
+    platform: state
+    to: 'off'
+
+#WASHING MASHINE notification
+- action:
+  - data:
+      data:
+        tag: washing
+      message: "The laundry is ready"
+      title: Washing
+    service: notify.notify
+  - data:
+      entity_id: script.google_home_on
+    service: script.turn_on
+  - data:
+      entity_id: media_player.home
+      message: "The laundry is ready"
+      language: "en-uk"
+    service: tts.google_say
+  - delay: 00:00:15
+  - data:
+      entity_id: script.google_home_off
+    service: script.turn_on
+  alias: Washing is done
+  condition: []
+  id: washing_is_done
+  trigger:
+  - entity_id: binary_sensor.washing
+    from: 'on'
+    platform: state
+    to: 'off'
