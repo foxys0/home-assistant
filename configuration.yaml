@@ -3,8 +3,8 @@ homeassistant:
   name: Home
   # Location required to calculate the time the sun rises and sets
   # 50.0761200N, 14.4600775E
-  latitude: 50.07612
-  longitude: 14.46007
+  latitude: !secret hass_latitude
+  longitude: !secret hass_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 252
   # metric for Metric, imperial for Imperial
@@ -18,6 +18,11 @@ automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 frontend: !include frontend.yaml
 group: !include groups.yaml
+history_graph: !include history_graph.yaml
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
+input_text: !include input_text.yaml
+light: !include light.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
@@ -81,51 +86,6 @@ google:
 # Enables support for tracking state changes over time
 history:
 
-history_graph:
-  crypto:
-    name: Profit
-    entities:
-      - sensor.crypto_usd_profit
-  humidity:
-    name: Humidity
-    entities:
-      - sensor.living_room_thermostat_humidity
-    hours_to_show: 24
-    refresh: 180
-  light_level:
-    name: "Light level"
-    entities:
-      - sensor.light_level_kitchen
-    hours_to_show: 24
-    refresh: 60
-  temperature:
-    name: Inside temperature
-    entities:
-      - sensor.living_room_thermostat_temperature
-      - sensor.temperature_kitchen
-      - sensor.temperature_hallway
-      - sensor.temperature_toilet
-    hours_to_show: 24
-    refresh: 180
-  outside_temperature:
-    name: "Outside temperature"
-    entities:
-      - sensor.weather_temperature
-    hours_to_show: 48
-    refresh: 180
-  washing_machine:
-    name: "Washing machine"
-    entities:
-      - sensor.washing_machine
-    hours_to_show: 3
-    refresh: 60
-  weight_matej:
-    name: "Weight Matěj"
-    entities:
-      - sensor.weight_matej
-    hours_to_show: 672
-    refresh: 360
-
 http:
   api_password: !secret http_password
   base_url: !secret http_url
@@ -138,43 +98,6 @@ hue:
 
 ifttt:
   key: !secret ifttt
-
-input_boolean:
-  camera_toggle:
-    name: "ARM / DISARM"
-    initial: off
-    icon: mdi:shield-half-full
-  alarm_toggle:
-    name: "ON / OFF"
-    initial: off
-    icon: mdi:flash
-  playstation_toggle:
-    name: "Playstation"
-    initial: off
-    icon: mdi:playstation
-  television_toggle:
-    name: "Television"
-    initial: off
-    icon: mdi:television
-
-input_select:
-  alarm:
-    name: Time
-    icon: mdi:alarm
-    initial: "07:40"
-    options:
-      - "07:00"
-      - "07:05"
-      - "07:10"
-      - "07:15"
-      - "07:20"
-      - "07:25"
-      - "07:30"
-      - "07:35"
-      - "07:40"
-      - "07:45"
-      - "07:50"
-      - "07:55"
 
 # View all events in a logbook
 logbook:
