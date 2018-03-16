@@ -1,0 +1,52 @@
+#HISTORY_GRAPH
+
+crypto:
+  name: Profit
+  entities:
+    - sensor.crypto_usd_profit
+
+humidity:
+  name: Humidity
+  entities:
+    - sensor.living_room_thermostat_humidity
+  hours_to_show: 24
+  refresh: 180
+
+light_level:
+  name: "Light level"
+  entities:
+    - sensor.light_level_kitchen
+  hours_to_show: 24
+  refresh: 60
+
+outside_temperature:
+  name: "Outside temperature"
+  entities:
+    - sensor.weather_temperature
+  hours_to_show: 48
+  refresh: 180
+
+temperature:
+  name: Inside temperature
+  entities:
+    - sensor.living_room_thermostat_temperature
+    - sensor.temperature_kitchen
+    - sensor.temperature_hallway
+    - sensor.temperature_toilet
+  hours_to_show: 24
+  refresh: 180
+
+washing_machine:
+  name: "Washing machine"
+  entities:
+    - sensor.washing_machine
+  hours_to_show: 3
+  refresh: 60
+
+weight_matej:
+  name: "Weight Matěj"
+  entities:
+    - sensor.weight_matej
+    - sensor.weight_matej_aligned
+  hours_to_show: 672
+  refresh: 360
