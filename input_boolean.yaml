@@ -1,0 +1,21 @@
+#INPUT_BOOLEAN
+
+alarm_toggle:
+  name: "ON / OFF"
+  initial: off
+  icon: mdi:flash
+
+camera_toggle:
+  name: "ARM / DISARM"
+  initial: off
+  icon: mdi:shield-half-full
+
+playstation_toggle:
+  name: "Playstation"
+  initial: off
+  icon: mdi:playstation
+
+television_toggle:
+  name: "Television"
+  initial: off
+  icon: mdi:television
