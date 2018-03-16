@@ -1,0 +1,16 @@
+themes:
+  happy:
+    primary-color: pink
+  sad:
+    primary-color: grey
+  main:
+    base-hue: '180' #Controls the base (and accent) color hue (0-360) | 0=Red 60=Yellow 120=Green 180=Cyan 240=Blue 300=Magenta 360=Red
+    base-sat: '10%' #Controls the saturation of the theme (0%-100%) | 0%=Grey 100%=Full Saturation
+    huesat: 'var(--base-hue), var(--base-sat),'
+    # Primary Color
+    primary-color: 'hsl(var(--huesat) 30%)'
+    # Switches
+    paper-toggle-button-checked-button-color: 'hsl(var(--base-hue), 50%, 40%)'
+    paper-toggle-button-checked-bar-color: 'hsl(var(--huesat) 70%)'
+    paper-toggle-button-unchecked-button-color: 'hsl(var(--huesat) 98%)'
+    paper-toggle-button-unchecked-bar-color: 'hsl(var(--huesat) 70%)'
