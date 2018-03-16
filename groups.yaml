@@ -9,7 +9,7 @@ default_view:
     - group.weather
     - group.thermostat
     - group.camera_buttons
-    - group.temperature
+    - group.inside_temperature
     - group.smoke_detector
     - device_tracker.matej
     - device_tracker.martina
@@ -22,6 +22,7 @@ buttons_view:
     - group.alarm
     - group.buttons
     - group.remote
+    - group.temperature_values
 
 lights_view:
   view: yes
@@ -157,6 +158,17 @@ device_status:
     - sensor.shield_online
     - sensor.washing_machine_online
 
+inside_temperature:
+  name: Inside temperature
+  icon: mdi:thermometer
+  entities:
+    - sensor.temperature_average
+    - sensor.living_room_thermostat_temperature
+    - sensor.temper
+    - sensor.temperature_kitchen
+    - sensor.temperature_hallway
+    - sensor.temperature_toilet
+
 kitchen:
   name: Kitchen
   icon: mdi:lightbulb
@@ -169,11 +181,11 @@ kitchen:
 light:
   name: Lights
   entities:
-    - group.living_room
-    - group.upstairs
-    - group.kitchen
-    - group.bathroom
-    - group.toilet
+    - light.living_room
+    - light.upstairs
+    - light.kitchen
+    - light.bathroom
+    - light.toilet
 
 living_room:
   name: Living room
@@ -211,16 +223,13 @@ smoke_detector:
     - sensor.upstairs_nest_protect_smoke_status
     - sensor.upstairs_nest_protect_battery_health
 
-temperature:
-  name: Inside temperature
-  icon: mdi:thermometer
+temperature_values:
+  name: Temperatures
+  icon: mdi:settings
   entities:
-    - sensor.temperature_average
-    - sensor.living_room_thermostat_temperature
-    - sensor.temper
-    - sensor.temperature_kitchen
-    - sensor.temperature_hallway
-    - sensor.temperature_toilet
+    - input_select.temp_high
+    - input_select.temp_low
+    - input_select.temp_night
 
 thermostat:
   name: Thermostat
@@ -228,7 +237,7 @@ thermostat:
   control: hidden
   entities:
     - climate.living_room
-    #- group.temperature
+#    - input_select.heat
     - sensor.living_room_thermostat_humidity
     - sensor.hvac_state
     - script.temperature_high
