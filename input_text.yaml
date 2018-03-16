@@ -1,0 +1,29 @@
+#INPUT_TEXT
+
+domain:
+  name: Domain
+  initial: !secret http_url
+
+total_investment:
+  name: Total investment
+  initial: !secret crypto_total_investment
+
+ripple:
+  name: Ripple
+  initial: !secret crypto_ripple
+
+cardano:
+  name: Cardano
+  initial: !secret crypto_cardano
+
+stellar:
+  name: Stellar
+  initial: !secret crypto_stellar
+
+tron:
+  name: Tron
+  initial: !secret crypto_tron
+
+ethereum:
+  name: Ethereum
+  initial: !secret crypto_ethereum
