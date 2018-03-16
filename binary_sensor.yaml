@@ -1,0 +1,17 @@
+  - platform: template
+    sensors:
+      everyone_away:
+        value_template: >-
+            {{ is_state("device_tracker.matej", "not_home")
+               and is_state("device_tracker.martina", "not_home")
+            }}
+      someone_at_home:
+        value_template: >-
+            {{ is_state("device_tracker.matej", "home")
+               or is_state("device_tracker.martina", "home")
+            }}
+      washing:
+        delay_off:
+          minutes: 1
+        value_template: >-
+            {{ states('sensor.washing_machine') | float > 3 }}
