@@ -17,6 +17,14 @@
   - platform: coinmarketcap
     currency: Ethereum
 
+  - platform: filter
+    name: "Weight Matěj aligned"
+    entity_id: sensor.weight_matej
+    filters:
+      - filter: lowpass
+        time_constant: 10
+        precision: 1
+
   - platform: hue
 
   - platform: template
@@ -31,21 +39,21 @@
       crypto_total_profit:
         unit_of_measurement: "%"
         value_template: >-
-            {{ ((((states.sensor.ripple.state | float * 574.24790843
-                + states.sensor.cardano.state | float * 260.739
-                + states.sensor.stellar.state | float * 549.45
-                + states.sensor.tron.state | float * 1998
-                + states.sensor.ethereum.state | float * 0.18)
-               / 1871.69) -1) *100) | round(1) }}
+            {{ ((((states.sensor.ripple.state | float * states.input_text.ripple.state | float
+                + states.sensor.cardano.state | float * states.input_text.cardano.state | float
+                + states.sensor.stellar.state | float * states.input_text.stellar.state | float
+                + states.sensor.tron.state | float * states.input_text.tron.state | float
+                + states.sensor.ethereum.state | float * states.input_text.ethereum.state | float)
+               / states.input_text.total_investment.state | float) -1) *100) | round(1) }}
       crypto_usd_profit:
         unit_of_measurement: "$"
         value_template: >-
-            {{ ((states.sensor.ripple.state | float * 574.24790843
-                + states.sensor.cardano.state | float * 260.739
-                + states.sensor.stellar.state | float * 549.45
-                + states.sensor.tron.state | float * 1998
-                + states.sensor.ethereum.state | float * 0.18)
-               - 1871.69) | round(1) }}
+            {{ ((states.sensor.ripple.state | float * states.input_text.ripple.state | float
+                + states.sensor.cardano.state | float * states.input_text.cardano.state | float
+                + states.sensor.stellar.state | float * states.input_text.stellar.state | float
+                + states.sensor.tron.state | float * states.input_text.tron.state | float
+                + states.sensor.ethereum.state | float * states.input_text.ethereum.state | float)
+               - states.input_text.total_investment.state | float) | round(1) }}
       forecast:
         friendly_name: "Forecast"
         unit_of_measurement: °C
