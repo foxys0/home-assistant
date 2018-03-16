@@ -1,0 +1,194 @@
+arlo_arm:
+  alias: Arlo - ARM
+  sequence:
+  - data:
+      event: arm_arlo
+    service: ifttt.trigger
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_on
+#  - data:
+#      data:
+#        tag: camera-on
+#      message: "Camera ON"
+#      title: Arlo
+#    service: notify.notify
+
+arlo_disarm:
+  alias: Arlo - DISARM
+  sequence:
+  - data:
+      event: disarm_arlo
+    service: ifttt.trigger
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_off
+#  - data:
+#      data:
+#        tag: camera-off
+#      message: "Camera OFF"
+#      title: Arlo
+#    service: notify.notify
+
+arlo_motion:
+  alias: Arlo - Motion detected
+  sequence:
+  - data_template:
+      message: "Motion detected"
+      title: Arlo
+      data:
+        tag: motion-detected
+        image: "https://{{ states.input_text.domain.state }}{{ states.camera.camberbatch.attributes.entity_picture }}"
+    service: notify.notify
+
+devices_off:
+  alias: All devices off
+  sequence:
+  - data:
+      entity_id: switch.washing_machine_switch
+    service: switch.turn_off
+  - data:
+      entity_id: remote.harmony_hub
+    service: remote.turn_off
+
+energize:
+  alias: Energize
+  sequence:
+  - data:
+      brightness: 254
+      color_temp: 154
+      entity_id: light.bathroom
+    service: light.turn_on
+
+good_night:
+  alias: Good night
+  sequence:
+  - data:
+      entity_id: script.lights_off
+    service: script.turn_on
+  - data_template:
+      temperature: "{{ states.input_select.temp_night.state | float }}"
+      entity_id: climate.living_room
+    service: climate.set_temperature
+  - delay: 00:15:00
+  - data:
+      entity_id: script.arlo_arm
+    service: script.turn_on
+
+google_home_on:
+  alias: Google Home ON
+  sequence:
+  - data:
+      entity_id: media_player.home
+    service: media_player.turn_on
+  - delay: 00:00:01
+  - data:
+      volume_set: 0.6
+      entity_id: media_player.home
+    service: media_player.volume_set
+
+google_home_off:
+  alias: Google Home OFF
+  sequence:
+  - data:
+      entity_id: media_player.home
+    service: media_player.turn_off
+
+lights_off:
+  alias: All lights off
+  sequence:
+  - data:
+      entity_id: light.bathroom
+    service: light.turn_off
+  - data:
+      entity_id: light.hallway
+    service: light.turn_off
+  - data:
+      entity_id: light.kitchen
+    service: light.turn_off
+  - data:
+      entity_id: light.living_room
+    service: light.turn_off
+  - data:
+      entity_id: light.toilet
+    service: light.turn_off
+  - data:
+      entity_id: light.upstairs
+    service: light.turn_off
+
+night_toilet:
+  alias: Night toilet
+  sequence:
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_off
+  - delay: 00:00:02
+  - data:
+      brightness: 1
+      color_temp: 500
+      entity_id: light.right
+    service: light.turn_on
+  - data:
+      brightness: 1
+      color_temp: 454
+      entity_id: light.bathroom
+    service: light.turn_on
+  - delay: 00:05:00
+  - data:
+      entity_id: script.lights_off
+    service: script.turn_on
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_on
+
+remote_playstation:
+  alias: Playstation
+  sequence:
+    - service: remote.turn_on
+      entity_id: remote.harmony_hub
+      data:
+        activity: 32303035
+
+remote_television:
+  alias: Television
+  sequence:
+    - service: remote.turn_on
+      entity_id: remote.harmony_hub
+      data:
+        activity: 30091866
+
+set_away:
+  alias: Set AWAY
+  sequence:
+  - data:
+      entity_id: script.lights_off
+    service: script.turn_on
+  - data:
+      entity_id: script.temperature_low
+    service: script.turn_on
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_on
+
+set_home:
+  alias: Set HOME
+  sequence:
+  - data:
+      entity_id: input_boolean.camera_toggle
+    service: input_boolean.turn_off
+
+temperature_high:
+  alias: Warm up
+  sequence:
+  - data_template:
+      temperature: "{{ states.input_select.temp_high.state | float }}"
+      entity_id: climate.living_room
+    service: climate.set_temperature
+
+temperature_low:
+  alias: Cool down
+  sequence:
+  - data_template:
+      temperature: "{{ states.input_select.temp_low.state | float }}"
+      entity_id: climate.living_room
+    service: climate.set_temperature
