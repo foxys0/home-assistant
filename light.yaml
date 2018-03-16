@@ -1,0 +1,31 @@
+  - platform: group
+    name: Living room
+    entities:
+      - light.angel
+      - light.left
+      - light.middle
+      - light.right
+  
+  - platform: group
+    name: Upstairs
+    entities:
+      - light.office
+
+  - platform: group
+    name: Kitchen
+    entities:
+      - light.kitchen_left_left
+      - light.kitchen_left
+      - light.kitchen_middle
+      - light.kitchen_right
+  
+  - platform: group
+    name: Bathroom
+    entities:
+      - light.bathroom_left
+      - light.bathroom_right
+  
+  - platform: group
+    name: Toilet
+    entities:
+      - light.wc
