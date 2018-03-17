@@ -1,2 +1,2 @@
-# home-assistant
-Home Assistant Configuration running on Raspberry Pi 3.
+# Home Assistant Configuration
+Configuration for Home Assistant running on Raspberry Pi 3.
