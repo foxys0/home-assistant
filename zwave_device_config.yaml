@@ -1,0 +1,24 @@
+switch.switch:
+  ignored: false
+  polling_intensity: 0
+sensor.washing_machine_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_energy:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_exporting:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_power_management:
+  ignored: true
+  polling_intensity: 0
+sensor.washing_machine_power:
+  ignored: true
+  polling_intensity: 0
