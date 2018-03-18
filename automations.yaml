@@ -263,7 +263,7 @@
   - platform: state
     entity_id: updater.updater
 
-#PLAYSTATION toggle
+#PLAYSTATION toggle ON by input
 - action:
   - data:
       entity_id: script.remote_playstation
@@ -272,7 +272,9 @@
       entity_id: input_boolean.television_toggle
     service: input_boolean.turn_off
   alias: Playstation ON by input
-  condition: []
+  condition:
+    - condition: template
+      value_template: '{{ states.remote.harmony_hub.attributes.current_activity == "PowerOff" }}'
   id: playstation_on_by_input
   trigger:
   - entity_id: input_boolean.playstation_toggle
@@ -280,6 +282,24 @@
     platform: state
     to: 'on'
 
+#PLAYSTATION toggle ON by other
+- action:
+  - data:
+      entity_id: input_boolean.television_toggle
+    service: input_boolean.turn_off
+  - data:
+      entity_id: input_boolean.playstation_toggle
+    service: input_boolean.turn_on
+  alias: Playstation ON by other input
+  condition:
+    - condition: template
+      value_template: '{{ trigger.to_state.attributes.current_activity == "Play PS4" }}'
+  id: playstation_on_by_other_input
+  trigger:
+  - entity_id: remote.harmony_hub
+    platform: state
+
+#PLAYSTATION toggle OFF by input
 - action:
   - data:
       entity_id: remote.harmony_hub
@@ -298,7 +318,7 @@
     platform: state
     to: 'off'
 
-#TELEVISION toggle
+#TELEVISION toggle ON by input
 - action:
   - data:
       entity_id: script.remote_television
@@ -307,7 +327,9 @@
       entity_id: input_boolean.playstation_toggle
     service: input_boolean.turn_off
   alias: Television ON by input
-  condition: []
+  condition:
+    - condition: template
+      value_template: '{{ states.remote.harmony_hub.attributes.current_activity == "PowerOff" }}'
   id: television_on_by_input
   trigger:
   - entity_id: input_boolean.television_toggle
@@ -315,6 +337,24 @@
     platform: state
     to: 'on'
 
+#TELEVISION toggle ON by other
+- action:
+  - data:
+      entity_id: input_boolean.playstation_toggle
+    service: input_boolean.turn_off
+  - data:
+      entity_id: input_boolean.television_toggle
+    service: input_boolean.turn_on
+  alias: Television ON by other input
+  condition:
+    - condition: template
+      value_template: '{{ trigger.to_state.attributes.current_activity == "Watch TV" }}'
+  id: television_on_by_other_input
+  trigger:
+  - entity_id: remote.harmony_hub
+    platform: state
+
+#TELEVISION toggle OFF by input
 - action:
   - data:
       entity_id: remote.harmony_hub
@@ -333,7 +373,7 @@
     platform: state
     to: 'off'
 
-#Turn off toggles when harmony is turned off by voice or remote
+#Turn off TELEVISION and PLAYSTATION when harmony is turned off by voice or remote
 - action:
   - data:
       entity_id: input_boolean.playstation_toggle
@@ -341,11 +381,11 @@
   - data:
       entity_id: input_boolean.television_toggle
     service: input_boolean.turn_off
-  alias: Television OFF by other input
+  alias: TV and PS4 OFF by other input
   condition:
     - condition: template
       value_template: '{{ trigger.to_state.attributes.current_activity == "PowerOff" }}'
-  id: television_off_by_other_input
+  id: television_playstation_off_by_other_input
   trigger:
   - entity_id: remote.harmony_hub
     platform: state
