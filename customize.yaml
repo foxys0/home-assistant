@@ -19,6 +19,10 @@ script.arlo_disarm:
   icon: mdi:camcorder-off
   friendly_name: DISARM
 
+script.devices_off
+  icon: mdi:power
+  friendly_name: Turn off all devices
+
 script.good_night:
   icon: mdi:sleep
   friendly_name: Good night
