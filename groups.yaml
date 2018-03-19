@@ -48,6 +48,7 @@ graph_view:
   #name: Temperature
   icon: mdi:chart-line
   entities:
+    - camera.forecast
     - history_graph.light_level
     - history_graph.inside_temperature
     - history_graph.humidity
