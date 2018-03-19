@@ -136,7 +136,10 @@
       entity_id: script.set_away
     service: script.turn_on
   alias: Set AWAY by location
-  condition: []
+  condition:
+    - condition: state
+      entity_id: input_boolean.override_alarm
+      state: 'off'
   id: set_away_by_location
   trigger:
   - entity_id: binary_sensor.everyone_away
@@ -162,7 +165,10 @@
       entity_id: script.google_home_off
     service: script.turn_on
   alias: Set HOME by location
-  condition: []
+  condition:
+    - condition: state
+      entity_id: input_boolean.override_alarm
+      state: 'off'
   id: set_home_by_location
   trigger:
   - entity_id: binary_sensor.someone_at_home
