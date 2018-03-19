@@ -15,6 +15,11 @@ playstation_toggle:
   initial: off
   icon: mdi:playstation
 
+override_alarm:
+  name: "Override alarm"
+  initial: off
+  icon: mdi:shield-outline
+
 television_toggle:
   name: "Television"
   initial: off
