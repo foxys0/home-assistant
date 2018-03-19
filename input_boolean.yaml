@@ -10,15 +10,15 @@ camera_toggle:
   initial: off
   icon: mdi:shield-half-full
 
+disable_location:
+  name: "Disable location
+  initial: off
+  icon: mdi:crosshairs-gps
+
 playstation_toggle:
   name: "Playstation"
   initial: off
   icon: mdi:playstation
-
-override_alarm:
-  name: "Override alarm"
-  initial: off
-  icon: mdi:shield-outline
 
 television_toggle:
   name: "Television"
