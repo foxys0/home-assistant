@@ -219,6 +219,7 @@ remote:
 security:
   name: Security
   icon: mdi:security-home
+  control: hidden
   entities:
     - input_boolean.disable_location
     - script.devices_off
