@@ -19,7 +19,7 @@ script.arlo_disarm:
   icon: mdi:camcorder-off
   friendly_name: DISARM
 
-script.devices_off
+script.devices_off:
   icon: mdi:power
   friendly_name: Turn off all devices
 
