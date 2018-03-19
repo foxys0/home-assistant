@@ -216,14 +216,12 @@ remote:
     - input_boolean.playstation_toggle
     - switch.washing_machine_switch
 
-
 security:
   name: Security
   icon: mdi:security-home
   entities:
     - input_boolean.override_alarm
     - script.devices_off
-
 
 smoke_detector:
   name: Smoke & CO
