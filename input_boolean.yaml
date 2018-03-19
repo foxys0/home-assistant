@@ -11,7 +11,7 @@ camera_toggle:
   icon: mdi:shield-half-full
 
 disable_location:
-  name: "Disable location
+  name: "Disable location"
   initial: off
   icon: mdi:crosshairs-gps
 
