@@ -79,6 +79,7 @@ status_view:
   icon: mdi:router-wireless
   entities:
     - group.device_status
+    - group.security
     - sensor.processor_use
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
@@ -88,7 +89,7 @@ status_view:
 # GROUPS
 
 alarm:
-  name: Alarm
+  name: Alarm Clock
   icon: mdi:alarm
   entities:
     - input_select.alarm
@@ -214,7 +215,15 @@ remote:
     - input_boolean.television_toggle
     - input_boolean.playstation_toggle
     - switch.washing_machine_switch
+
+
+security:
+  name: Security
+  icon: mdi:security-home
+  entities:
+    - input_boolean.override_alarm
     - script.devices_off
+
 
 smoke_detector:
   name: Smoke & CO
