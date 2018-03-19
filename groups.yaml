@@ -220,7 +220,7 @@ security:
   name: Security
   icon: mdi:security-home
   entities:
-    - input_boolean.override_alarm
+    - input_boolean.disable_location
     - script.devices_off
 
 smoke_detector:
