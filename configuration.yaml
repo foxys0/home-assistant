@@ -61,6 +61,7 @@ device_tracker:
   - platform: upc_connect
     consider_home: 60
     hide_if_away: yes
+  - platform: bluetooth_tracker
 
 # Discover some devices automatically
 discovery:
