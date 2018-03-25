@@ -84,7 +84,6 @@ status_view:
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
     - sensor.uptime
-    - sensor.washing_machine
 
 # GROUPS
 
