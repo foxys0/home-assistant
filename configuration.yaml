@@ -61,11 +61,6 @@ device_tracker:
   - platform: upc_connect
     consider_home: 60
     hide_if_away: yes
-  - platform: nmap_tracker
-    home_interval: 1
-    hosts:
-      - 192.168.0.87
-      - 192.168.0.95
 
 # Discover some devices automatically
 discovery:
