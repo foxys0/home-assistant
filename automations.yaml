@@ -19,13 +19,13 @@
       state: 'on'
     - condition: template
       value_template: '{{ now().strftime("%H:%M") == states.input_select.alarm.state }}'
-   - condition: time
-     weekday:
-     - mon
-     - tue
-     - wed
-     - thu
-     - fri
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   trigger:
     - platform: time
       minutes: '/1'
