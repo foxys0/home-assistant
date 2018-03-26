@@ -19,6 +19,13 @@
       state: 'on'
     - condition: template
       value_template: '{{ now().strftime("%H:%M") == states.input_select.alarm.state }}'
+   - condition: time
+     weekday:
+     - mon
+     - tue
+     - wed
+     - thu
+     - fri
   trigger:
     - platform: time
       minutes: '/1'
@@ -110,12 +117,14 @@
       entity_id: script.energize
     service: script.turn_on
   alias: Energize by button
-  condition: []
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_switch
+      state: '2_click'
   id: energize_by_button
   trigger:
-  - entity_id: sensor.kitchen_switch
+  - entity_id: sensor.philips_hue_switch_changed
     platform: state
-    to: 2_click
 
 #LIGHTS OFF by dimmer switch
 - action:
@@ -123,12 +132,14 @@
       entity_id: group.all_lights
     service: light.turn_off
   alias: Lights off by button
-  condition: []
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_switch
+      state: '3_click'
   id: lights_off_by_button
   trigger:
-  - entity_id: sensor.kitchen_switch
+  - entity_id: sensor.philips_hue_switch_changed
     platform: state
-    to: 3_click
 
 #SET AWAY by wifi connection
 - action:
@@ -198,20 +209,14 @@
       entity_id: script.night_toilet
     service: script.turn_on
   alias: Night toilet by button
-  condition: []
-#  condition:
-#  - condition: time
-#    weekday:
-#    - mon
-#    - tue
-#    - wed
-#    - thu
-#    - fri
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_switch
+      state: '1_click'
   id: night_toilet_by_button
   trigger:
-  - entity_id: sensor.kitchen_switch
+  - entity_id: sensor.philips_hue_switch_changed
     platform: state
-    to: 1_click
 
 #GOOD NIGHT by dimmer switch
 - action:
@@ -222,12 +227,14 @@
       entity_id: script.good_night
     service: script.turn_on
   alias: Good night by button
-  condition: []
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_switch
+      state: '4_click'
   id: good_night_by_button
   trigger:
-  - entity_id: sensor.kitchen_switch
+  - entity_id: sensor.philips_hue_switch_changed
     platform: state
-    to: 4_click
 
 # HOME ASSISTANT update notification
 - action:
