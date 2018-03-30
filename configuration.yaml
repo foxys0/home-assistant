@@ -59,8 +59,12 @@ conversation:
 
 device_tracker:
   - platform: upc_connect
-    consider_home: 60
+    consider_home: 120
     hide_if_away: yes
+  - platform: unifi_direct
+    host: unifi_ip
+    username: unifi_user
+    password: unifi_password
 
 # Discover some devices automatically
 discovery:
