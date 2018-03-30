@@ -51,7 +51,10 @@
       entity_id: script.arlo_arm
     service: script.turn_on
   alias: Camera ARM by input
-  condition: []
+  condition:
+    - condition: state
+      entity_id: script.arlo_arm
+      state: 'off'
   id: camera_arm_by_input
   trigger:
   - entity_id: input_boolean.camera_toggle
@@ -65,7 +68,10 @@
       entity_id: script.arlo_disarm
     service: script.turn_on
   alias: Camera DISARM by input
-  condition: []
+  condition:
+    - condition: state
+      entity_id: script.arlo_disarm
+      state: 'off'
   id: camera_disarm_by_input
   trigger:
   - entity_id: input_boolean.camera_toggle
