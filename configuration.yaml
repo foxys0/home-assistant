@@ -31,7 +31,7 @@ switch: !include switch.yaml
 #  - platform: arlo
 
 #android_ip_webcam:
-#  - host: 192.168.0.157
+#  - host: !secret android_ip_webcam
 #    switches:
 #      - night_vision
 #      - torch
@@ -59,7 +59,7 @@ conversation:
 
 device_tracker:
   - platform: upc_connect
-    consider_home: 120
+    consider_home: 100
     hide_if_away: yes
   - platform: unifi_direct
     host: unifi_ip
@@ -101,7 +101,7 @@ http:
 
 hue:
   bridges:
-    - host: 192.168.0.31
+    - host: !secret philips_hue_bridge
 
 ifttt:
   key: !secret ifttt
@@ -121,11 +121,11 @@ notify:
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
 
-#panel_iframe:
-#  configurator:
-#    title: Configurator
-#    icon: mdi:wrench
-#    url: 'https://192.168.0.242:8321'
+panel_iframe:
+  configurator:
+    title: GIT
+    icon: mdi:git
+    url: 'https://github.com/foxys0/home-assistant'
 
 remote:
   - platform: harmony
