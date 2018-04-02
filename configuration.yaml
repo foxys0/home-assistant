@@ -121,12 +121,6 @@ notify:
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
 
-panel_iframe:
-  configurator:
-    title: GIT
-    icon: mdi:git
-    url: 'https://github.com/foxys0/home-assistant'
-
 remote:
   - platform: harmony
     name: TV
