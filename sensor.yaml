@@ -179,7 +179,7 @@
       - type: memory_use_percent
       - type: processor_use
 
-#  - platform: temper
+  - platform: temper
 
   - platform: uptime
 
