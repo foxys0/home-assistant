@@ -7,12 +7,6 @@ arlo_arm:
   - data:
       entity_id: input_boolean.camera_toggle
     service: input_boolean.turn_on
-#  - data:
-#      data:
-#        tag: camera-on
-#      message: "Camera ON"
-#      title: Arlo
-#    service: notify.notify
 
 arlo_disarm:
   alias: Arlo - DISARM
@@ -23,12 +17,6 @@ arlo_disarm:
   - data:
       entity_id: input_boolean.camera_toggle
     service: input_boolean.turn_off
-#  - data:
-#      data:
-#        tag: camera-off
-#      message: "Camera OFF"
-#      title: Arlo
-#    service: notify.notify
 
 arlo_motion:
   alias: Arlo - Motion detected
@@ -70,6 +58,9 @@ good_night:
       temperature: "{{ states.input_select.temp_night.state | float }}"
       entity_id: climate.living_room
     service: climate.set_temperature
+  - data:
+      entity_id: input_boolean.disable_location
+    service: input_boolean.turn_on
   - delay: 00:15:00
   - data:
       entity_id: script.arlo_arm
