@@ -61,6 +61,7 @@ usps_cookies.pickle
 camera_recording.py
 home-assistant.env
 home-assistant.*
+hue.py
 known_devices.yaml
 entity_registry.yaml
 secrets.yaml
