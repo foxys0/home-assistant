@@ -34,6 +34,7 @@ lights_view:
     - group.kitchen
     - group.bathroom
     - group.toilet
+    - group.hallway
     - switch.fluxer
 
 media_view:
@@ -158,6 +159,12 @@ device_status:
     - sensor.scale_online
     - sensor.shield_online
     - sensor.washing_machine_online
+
+hallway:
+  name: Hallway
+  icon: mdi:lightbulb
+  entities:
+    - light.hall
 
 inside_temperature:
   name: Inside temperature
