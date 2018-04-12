@@ -21,9 +21,9 @@
     name: "Weight Matěj aligned"
     entity_id: sensor.weight_matej
     filters:
-      - filter: lowpass
-        time_constant: 10
-        precision: 1
+      - filter: outlier
+        window_size: 4000
+        radius: 4.0
 
   - platform: hue
 
