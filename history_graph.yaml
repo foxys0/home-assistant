@@ -4,13 +4,13 @@ crypto:
   name: Profit
   entities:
     - sensor.crypto_usd_profit
-  hours_to_show: 336 #14 days
+  hours_to_show: 720 #30 days
 
 humidity:
   name: Humidity
   entities:
     - sensor.living_room_thermostat_humidity
-  hours_to_show: 24
+  hours_to_show: 72 #3 days
   refresh: 180
 
 light_level:
@@ -49,5 +49,5 @@ weight_matej:
   entities:
     - sensor.weight_matej
     - sensor.weight_matej_aligned
-  hours_to_show: 672 #28 days
+  hours_to_show: 720 #30 days
   refresh: 360
