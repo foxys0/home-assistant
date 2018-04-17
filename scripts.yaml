@@ -74,7 +74,7 @@ google_home_on:
     service: media_player.turn_on
   - delay: 00:00:01
   - data:
-      volume_set: 0.6
+      volume_level: 0.6
       entity_id: media_player.home
     service: media_player.volume_set
 
