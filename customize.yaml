@@ -83,11 +83,11 @@ sensor.living_room_thermostat_humidity:
   friendly_name: Humidity
 
 sensor.nest_thermostat_online:
-  icon: mdi:nest-thermostat
+  icon: mdi:thermostat
   friendly_name: Nest Thermostat
 
 sensor.nest_protect_online:
-  icon: mdi:nest-protect
+  icon: mdi:smoke-detector
   friendly_name: Nest Protect
 
 sensor.philips_hue_online:
