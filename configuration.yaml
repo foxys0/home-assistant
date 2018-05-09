@@ -58,10 +58,11 @@ conversation:
 #  custom_ui: local
 
 device_tracker:
-  - platform: unifi_direct
-    host: !secret unifi_ip
+  - platform: unifi
+#    host: !secret unifi_ip
     username: !secret unifi_user
     password: !secret unifi_password
+    verify_ssl: false
     consider_home: 100
     hide_if_away: yes
 
