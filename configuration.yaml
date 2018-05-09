@@ -58,13 +58,12 @@ conversation:
 #  custom_ui: local
 
 device_tracker:
-  - platform: upc_connect
-    consider_home: 100
-    hide_if_away: yes
   - platform: unifi_direct
     host: !secret unifi_ip
     username: !secret unifi_user
     password: !secret unifi_password
+    consider_home: 100
+    hide_if_away: yes
 
 # Discover some devices automatically
 discovery:
