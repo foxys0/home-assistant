@@ -281,7 +281,7 @@
     service: script.turn_on
   - data:
       entity_id: media_player.home
-      message: "Update for home assistant is ready"
+      message: "Update for Home Assistant is ready"
       language: "en-uk"
     service: tts.google_say
   - delay: 00:00:15
@@ -291,9 +291,9 @@
   alias: HASS update (voice)
   condition:
   - condition: sun
-    after: sunset
+    after: sunrise
   - condition: sun
-    before: sunrise
+    before: sunset
   id: hass_update_voice
   trigger:
   - platform: state
