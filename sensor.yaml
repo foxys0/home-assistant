@@ -33,6 +33,15 @@
 
   - platform: hue
 
+  - platform: history_stats
+    name: light_living_room_length
+    entity_id: light.living_room
+    state: 'on'
+    type: time
+    end: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    duration:
+      hours: 24
+
   - platform: template
     sensors:
       arlo_q_online:
