@@ -62,8 +62,7 @@ device_tracker:
     host: !secret unifi_ip
     username: !secret unifi_user
     password: !secret unifi_password
-#    verify_ssl: false
-    consider_home: 100
+    consider_home: 80
     hide_if_away: yes
 
 # Discover some devices automatically
