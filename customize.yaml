@@ -2,6 +2,26 @@ climate.living_room:
   icon: mdi:thermometer-lines
   friendly_name: Temperature
 
+device_tracker.apple_ipad:
+  icon: mdi:tablet-ipad
+  friendly_name: Apple iPad
+
+device_tracker.asus_chromebook:
+  icon: mdi:laptop
+  friendly_name: Asus Chromebook
+
+device_tracker.lenovo_yoga:
+  icon: mdi:laptop
+  friendly_name: Lenovo Yoga
+
+device_tracker.dell_latitude:
+  icon: mdi:laptop
+  friendly_name: Dell Latitude
+
+device_tracker.sony_vaio:
+  icon: mdi:laptop
+  friendly_name: Sony Vaio
+
 group.temperature:
   order: 41
 group.devices:
