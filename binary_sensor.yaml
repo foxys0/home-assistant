@@ -15,3 +15,6 @@
           minutes: 1
         value_template: >-
             {{ states('sensor.washing_machine') | float > 10 }}
+
+  - platform: workday
+    country: CZ
