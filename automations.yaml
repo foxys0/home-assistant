@@ -19,13 +19,9 @@
       state: 'on'
     - condition: template
       value_template: '{{ now().strftime("%H:%M") == states.input_select.alarm.state }}'
-    - condition: time
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
   trigger:
     - platform: time
       minutes: '/1'
