@@ -37,6 +37,13 @@ temperature:
   hours_to_show: 24
   refresh: 180
 
+usage:
+  name: Usage
+  entities:
+    - sensor.light_living_room_length
+  hours_to_show: 24
+  refresh: 168 #7 days
+
 washing_machine:
   name: "Washing machine"
   entities:
