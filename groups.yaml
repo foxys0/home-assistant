@@ -79,8 +79,9 @@ status_view:
   view: yes
   icon: mdi:router-wireless
   entities:
-    - group.device_status
+    - group.gadgets_status
     - group.security
+    - group.device_status
     - sensor.processor_use
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
@@ -149,7 +150,16 @@ crypto:
     - sensor.ethereum
 
 device_status:
-  name: Status
+  name: Devices
+  entities:
+    - device_tracker.apple_ipad
+    - device_tracker.asus_chromebook
+    - device_tracker.lenovo_yoga
+    - device_tracker.dell_latitude
+    - device_tracker.sony_vaio
+
+gadgets_status:
+  name: Gadgets
   entities:
     - sensor.arlo_q_online
     - sensor.google_home_online
