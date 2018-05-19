@@ -56,6 +56,7 @@ graph_view:
     - history_graph.outside_temperature
     - history_graph.washing_machine
     - history_graph.weight_matej
+    - history_graph.usage
 
 camera_view:
   view: yes
