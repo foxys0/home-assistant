@@ -148,6 +148,9 @@
 #LIGHTS OFF by dimmer switch
 - action:
   - data:
+      entity_id: input_boolean.alarm_toggle
+    service: input_boolean.turn_on
+  - data:
       entity_id: script.fade_out
     service: script.turn_on
 #  - data:
