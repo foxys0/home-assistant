@@ -57,7 +57,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 160
       color_temp: 454
       entity_id: light.living_room
@@ -68,7 +68,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 140
       color_temp: 454
       entity_id: light.living_room
@@ -79,7 +79,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 120
       color_temp: 454
       entity_id: light.living_room
@@ -90,7 +90,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 110
       color_temp: 454
       entity_id: light.living_room
@@ -101,7 +101,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 100
       color_temp: 454
       entity_id: light.living_room
@@ -112,7 +112,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 90
       color_temp: 454
       entity_id: light.living_room
@@ -123,7 +123,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 75
       color_temp: 454
       entity_id: light.living_room
@@ -134,7 +134,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 55
       color_temp: 454
       entity_id: light.living_room
@@ -145,7 +145,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 35
       color_temp: 454
       entity_id: light.living_room
@@ -156,7 +156,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 20
       color_temp: 454
       entity_id: light.living_room
@@ -167,7 +167,7 @@ fade_out:
       color_temp: 454
       entity_id: light.office
     service: light.turn_on
-   - data:
+  - data:
       brightness: 10
       color_temp: 454
       entity_id: light.living_room
