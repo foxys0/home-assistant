@@ -131,16 +131,43 @@
     to: 'on'
 
 #ENERGIZE by dimmer switch
+#- action:
+#  - data:
+#      entity_id: script.energize
+#    service: script.turn_on
+#  alias: Energize by button
+#  condition:
+#    - condition: state
+#      entity_id: sensor.kitchen_switch
+#      state: '2_click'
+#  id: energize_by_button
+#  trigger:
+#  - entity_id: sensor.philips_hue_switch_changed
+#    platform: state
+
+#Disable FADE_OFF and turn on lights
 - action:
   - data:
-      entity_id: script.energize
-    service: script.turn_on
-  alias: Energize by button
+      entity_id: script.fade_off
+    service: script.turn_off
+  - data:
+      brightness: 186
+      color_temp: 454
+      entity_id: light.office
+  - data:
+      brightness: 186
+      color_temp: 454
+      entity_id: light.living_room
+  - data:
+      brightness: 186
+      color_temp: 454
+      entity_id: light.kitchen
+  alias: Disable FADE_OFF
   condition:
     - condition: state
       entity_id: sensor.kitchen_switch
       state: '2_click'
-  id: energize_by_button
+  id: disable_fade_off
   trigger:
   - entity_id: sensor.philips_hue_switch_changed
     platform: state
