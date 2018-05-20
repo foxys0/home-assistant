@@ -154,14 +154,17 @@
       brightness: 186
       color_temp: 454
       entity_id: light.office
+    service: light.turn_on
   - data:
       brightness: 186
       color_temp: 454
       entity_id: light.living_room
+    service: light.turn_on
   - data:
       brightness: 186
       color_temp: 454
       entity_id: light.kitchen
+    service: light.turn_on
   alias: Disable FADE_OFF
   condition:
     - condition: state
