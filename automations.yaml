@@ -148,8 +148,11 @@
 #LIGHTS OFF by dimmer switch
 - action:
   - data:
-      entity_id: group.all_lights
-    service: light.turn_off
+      entity_id: script.fade_out
+    service: script.turn_on
+#  - data:
+#      entity_id: group.all_lights
+#    service: light.turn_off
   alias: Lights off by button
   condition:
     - condition: state
