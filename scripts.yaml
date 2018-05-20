@@ -49,6 +49,7 @@ energize:
     service: light.turn_on
 
 #BEGIN FADE OUT
+#BEGIN FADE OUT
 fade_out:
   alias: Fade out
   sequence:
@@ -64,8 +65,32 @@ fade_out:
     service: light.turn_on
   - delay: 00:05:00
   - data:
-      entity_id: group.all_lights
-    service: light.turn_off
+      brightness: 140
+      color_temp: 454
+      entity_id: light.office
+    service: light.turn_on
+  - data:
+      brightness: 140
+      color_temp: 454
+      entity_id: light.living_room
+    service: light.turn_on
+  - delay: 00:05:00
+  - data:
+      brightness: 120
+      color_temp: 454
+      entity_id: light.office
+    service: light.turn_on
+  - data:
+      brightness: 120
+      color_temp: 454
+      entity_id: light.living_room
+    service: light.turn_on
+  - delay: 00:02:00
+  - data:
+      brightness: 110
+      color_temp: 454
+      entity_id: light.office
+    service: light.turn_on
 #END FADE OUT
 
 good_night:
