@@ -112,6 +112,7 @@ buttons:
   entities:
     - script.night_toilet
     - script.good_night
+    - script.fade_out
 
 camera:
   name: Camera
