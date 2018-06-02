@@ -10,6 +10,7 @@ default_view:
     - group.thermostat
     - group.camera_buttons
     - group.inside_temperature
+    - group.inside_humidity
     - group.smoke_detector
     - device_tracker.matej
     - device_tracker.martina
@@ -179,6 +180,13 @@ hallway:
   entities:
     - light.hall
 
+inside_humidity:
+  name: Inside humidity
+  icon: mdi:water
+  entities:
+    - sensor.living_room_thermostat_humidity
+    - sensor.mitemp_bt_humidity
+
 inside_temperature:
   name: Inside temperature
   icon: mdi:thermometer
@@ -267,7 +275,6 @@ thermostat:
   entities:
     - climate.living_room
 #    - input_select.heat
-    - sensor.living_room_thermostat_humidity
     - sensor.hvac_state
     - script.temperature_high
     - script.temperature_low
