@@ -31,6 +31,7 @@ temperature:
   name: Inside temperature
   entities:
     - sensor.living_room_thermostat_temperature
+    - sensor.mitemp_bt_temperature
     - sensor.temperature_kitchen
     - sensor.temperature_hallway
     - sensor.temperature_toilet
