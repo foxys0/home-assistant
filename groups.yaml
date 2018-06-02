@@ -185,7 +185,8 @@ inside_temperature:
   entities:
     - sensor.temperature_average
     - sensor.living_room_thermostat_temperature
-    - sensor.temper
+    - sensor.mitemp_bt_temperature
+#    - sensor.temper
     - sensor.temperature_kitchen
     - sensor.temperature_hallway
     - sensor.temperature_toilet
