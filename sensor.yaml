@@ -42,6 +42,9 @@
     duration:
       hours: 24
 
+  - platform: mitemp_bt
+    mac: !secret xiaomi_mac
+
   - platform: template
     sensors:
       arlo_q_online:
