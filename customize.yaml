@@ -43,6 +43,10 @@ script.devices_off:
   icon: mdi:power
   friendly_name: Turn off all devices
 
+script.fade_out:
+  icon: mdi:human-female
+  friendly_name: I am sleeping alone
+
 script.good_night:
   icon: mdi:sleep
   friendly_name: Good night
