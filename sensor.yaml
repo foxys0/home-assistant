@@ -156,10 +156,11 @@
         unit_of_measurement: °C
         value_template: >-
             {{ ((states.sensor.living_room_thermostat_temperature.state | float +
+                 states.sensor.mitemp_bt_temperature.state | float +
                  states.sensor.temperature_hallway.state | float  +
                  states.sensor.temperature_kitchen.state | float  +
                  states.sensor.temperature_toilet.state | float)
-               / 4) | round(1)}}
+               / 5) | round(1)}}
       temperature_hallway:
         value_template: '{{ (states.sensor.hallway_motion_sensor.attributes.temperature + 2.1) | round(1) }}'
         unit_of_measurement: °C
