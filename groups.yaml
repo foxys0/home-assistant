@@ -276,8 +276,8 @@ thermostat:
     - climate.living_room
 #    - input_select.heat
     - sensor.hvac_state
-    - script.temperature_high
-    - script.temperature_low
+#    - script.temperature_high
+#    - script.temperature_low
 
 toilet:
   name: Toilet
