@@ -90,7 +90,11 @@ sensor.temperature_kitchen:
   icon: mdi:thermometer
   friendly_name: Kitchen
 
-sensor.mitemp_bt_temperature
+sensor.mitemp_bt_humidity:
+  icon: mdi:water
+  friendly_name: Upstairs
+
+sensor.mitemp_bt_temperature:
   icon: mdi:thermometer
   friendly_name: Upstairs
 
@@ -104,7 +108,7 @@ sensor.harmony_hub_online:
 
 sensor.living_room_thermostat_humidity:
   icon: mdi:water
-  friendly_name: Humidity
+  friendly_name: Living room
 
 sensor.nest_thermostat_online:
   icon: mdi:thermostat
