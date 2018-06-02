@@ -80,7 +80,7 @@ sensor.living_room_thermostat_temperature:
 
 sensor.temperature_average:
   icon: mdi:thermometer
-  friendly_name: Average
+  friendly_name: AVG
 
 sensor.temperature_hallway:
   icon: mdi:thermometer
@@ -89,6 +89,10 @@ sensor.temperature_hallway:
 sensor.temperature_kitchen:
   icon: mdi:thermometer
   friendly_name: Kitchen
+
+sensor.mitemp_bt_temperature
+  icon: mdi:thermometer
+  friendly_name: Upstairs
 
 sensor.temperature_toilet:
   icon: mdi:thermometer
