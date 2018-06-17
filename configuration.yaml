@@ -113,6 +113,8 @@ logger:
   default: error
   logs:
     homeassistant.components.sensor.mitemp_bt: critical
+    homeassistant.components.sensor.mitemp_bt_temperature: critical
+    homeassistant.components.sensor.mitemp_bt_humidity: critical
 
 # Enables a map showing the location of tracked devices
 # map:
