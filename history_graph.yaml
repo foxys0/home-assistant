@@ -10,6 +10,7 @@ humidity:
   name: Humidity
   entities:
     - sensor.living_room_thermostat_humidity
+    - sensor.mitemp_bt_humidity
   hours_to_show: 72 #3 days
   refresh: 180
 
