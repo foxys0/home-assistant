@@ -221,7 +221,7 @@
   - data:
       entity_id: script.google_home_on
     service: script.turn_on
-  - delay: 00:00:20
+  - delay: 00:00:10
   - data:
       entity_id: media_player.home
       message: "Welcome home"
