@@ -57,7 +57,7 @@
       crypto_total_profit:
         unit_of_measurement: "%"
         value_template: >-
-            {{ ((((states.sensor.ripple.state | float * states.input_text.ripple.state | float
+            {{ ((((states.sensor.xrp.state | float * states.input_text.ripple.state | float
                 + states.sensor.cardano.state | float * states.input_text.cardano.state | float
                 + states.sensor.stellar.state | float * states.input_text.stellar.state | float
                 + states.sensor.tron.state | float * states.input_text.tron.state | float
@@ -66,7 +66,7 @@
       crypto_usd_profit:
         unit_of_measurement: "$"
         value_template: >-
-            {{ ((states.sensor.ripple.state | float * states.input_text.ripple.state | float
+            {{ ((states.sensor.xrp.state | float * states.input_text.ripple.state | float
                 + states.sensor.cardano.state | float * states.input_text.cardano.state | float
                 + states.sensor.stellar.state | float * states.input_text.stellar.state | float
                 + states.sensor.tron.state | float * states.input_text.tron.state | float
