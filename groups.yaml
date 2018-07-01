@@ -146,7 +146,7 @@ crypto:
   entities:
     - sensor.crypto_usd_profit
     - sensor.crypto_total_profit
-    - sensor.ripple
+    - sensor.xrp
     - sensor.cardano
     - sensor.stellar
     - sensor.tron
