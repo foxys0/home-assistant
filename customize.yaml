@@ -154,6 +154,10 @@ sensor.washing_machine_online:
   icon: mdi:washing-machine
   friendly_name: Washing machine
 
+sensor.xrp:
+  icon: mdi:currency-usd
+  friendly_name: Ripple
+
 switch.fluxer:
   icon: mdi:weather-night
   friendly_name: Lights temperature
