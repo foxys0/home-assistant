@@ -7,15 +7,15 @@
       - signal_strength
 
   - platform: coinmarketcap
-    currency: Ripple
+    currency_id: 52 #Ripple
   - platform: coinmarketcap
-    currency: Cardano
+    currency_id: 2010 #Cardano
   - platform: coinmarketcap
-    currency: Stellar
+    currency_id: 512 #Stellar
   - platform: coinmarketcap
-    currency: Tron
+    currency_id: 1958 #Tron
   - platform: coinmarketcap
-    currency: Ethereum
+    currency_id: 1027 #Ethereum
 
   - platform: command_line
     name: CPU Temperature
