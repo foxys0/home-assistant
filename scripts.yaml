@@ -18,16 +18,16 @@ arlo_disarm:
       entity_id: input_boolean.camera_toggle
     service: input_boolean.turn_off
 
-arlo_motion:
-  alias: Arlo - Motion detected
-  sequence:
-  - data_template:
-      message: "Motion detected"
-      title: Arlo
-      data:
-        tag: motion-detected
-        image: "https://{{ states.input_text.domain.state }}{{ states.camera.camberbatch.attributes.entity_picture }}"
-    service: notify.notify
+#arlo_motion:
+#  alias: Arlo - Motion detected
+#  sequence:
+#  - data_template:
+#      message: "Motion detected"
+#      title: Arlo
+#      data:
+#        tag: motion-detected
+#        image: "https://{{ states.input_text.domain.state }}{{ states.camera.camberbatch.attributes.entity_picture }}"
+#    service: notify.notify
 
 devices_off:
   alias: All devices off
