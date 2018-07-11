@@ -20,9 +20,9 @@ buttons_view:
   #name: Buttons
   icon: mdi:gesture-tap
   entities:
+    - group.remote
     - group.alarm
     - group.buttons
-    - group.remote
     - group.temperature_values
 
 lights_view:
