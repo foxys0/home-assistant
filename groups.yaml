@@ -159,6 +159,7 @@ device_status:
     - device_tracker.asus_chromebook
     - device_tracker.lenovo_yoga
     - device_tracker.dell_latitude
+    - device_tracker.playstation
     - device_tracker.sony_vaio
 
 gadgets_status:
