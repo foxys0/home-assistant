@@ -66,7 +66,7 @@ device_tracker:
     hide_if_away: yes
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 ffmpeg:
 
