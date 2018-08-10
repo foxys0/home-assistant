@@ -18,6 +18,10 @@ device_tracker.dell_latitude:
   icon: mdi:laptop
   friendly_name: Dell Latitude
 
+device_tracker.playstation:
+  icon: mdi:playstation
+  friendly_name: Playstation
+
 device_tracker.sony_vaio:
   icon: mdi:laptop
   friendly_name: Sony Vaio
