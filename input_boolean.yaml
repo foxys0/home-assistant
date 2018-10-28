@@ -10,6 +10,11 @@ camera_toggle:
   initial: off
   icon: mdi:shield-half-full
 
+celebrate_toggle:
+  name: "Lets celebrate!"
+  initial: off
+  icon: mdi:flag-variant
+
 disable_location:
   name: "Disable location"
   initial: off
