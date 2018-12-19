@@ -98,6 +98,7 @@ alarm:
   entities:
     - input_select.alarm
     - input_boolean.alarm_toggle
+    - input_boolean.alarm_by_light_toggle
 
 bathroom:
   name: Bathroom
