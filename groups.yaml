@@ -95,6 +95,7 @@ status_view:
 alarm:
   name: Alarm Clock
   icon: mdi:alarm
+  control: hidden
   entities:
     - input_select.alarm
     - input_boolean.alarm_toggle
