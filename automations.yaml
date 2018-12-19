@@ -1,3 +1,23 @@
+#ALARM by light (-20min)
+- action:
+  - data:
+      entity_id: script.fade_in
+    service: script.turn_on
+  alias: "Morning alarm by light"
+  condition:
+    - condition: state
+      entity_id: input_boolean.alarm_by_light_toggle
+      state: 'on'
+    - condition: template
+      value_template: '{{ (as_timestamp(now()) - 1200) | timestamp_custom("%H:%M") == states.input_select.alarm.state }}'
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+  trigger:
+    - platform: time
+      minutes: '/1'
+      seconds: 0
+
 #ALARM by voice
 - action:
   - data:
