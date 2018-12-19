@@ -48,6 +48,27 @@ energize:
       entity_id: light.bathroom
     service: light.turn_on
 
+fade_in:
+  alias: Fade in
+  sequence:
+  - data:
+      brightness: 10
+      color_temp: 454
+      entity_id: light.office
+    service: light.turn_on
+  - data:
+      brightness: 160
+      color_temp: 454
+      entity_id: light.office
+      transition: 600
+    service: light.turn_on
+  - data:
+      brightness: 160
+      color_temp: 154
+      entity_id: light.office
+      transition: 600
+    service: light.turn_on
+
 fade_out:
   alias: Fade out
   sequence:
