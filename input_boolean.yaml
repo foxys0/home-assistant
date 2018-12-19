@@ -5,6 +5,11 @@ alarm_toggle:
   initial: off
   icon: mdi:flash
 
+alarm_by_light_toggle:
+  name: "Sunrise"
+  initial: off
+  icon: mdi:weather-sunset
+
 camera_toggle:
   name: "ARM / DISARM"
   initial: off
