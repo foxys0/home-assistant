@@ -233,9 +233,10 @@ media:
   name: Media
   icon: mdi:play-circle
   entities:
-    - media_player.home
+    - media_player.mary_and_max
+    - media_player.mary
+    - media_player.max
     - media_player.shield
-#    - media_player.plex_web_chrome_2
 
 remote:
   name: Remote
