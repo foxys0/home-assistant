@@ -83,6 +83,10 @@ sensor.google_home_online:
   icon: mdi:google-home
   friendly_name: Google Home
 
+sensor.google_home_max_online:
+  icon: mdi:speaker
+  friendly_name: Google Home Max
+
 sensor.living_room_thermostat_temperature:
   friendly_name: Living room
 
