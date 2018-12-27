@@ -115,19 +115,19 @@ google_home_on:
   alias: Google Home ON
   sequence:
   - data:
-      entity_id: media_player.home
+      entity_id: media_player.mary_and_max
     service: media_player.turn_on
   - delay: 00:00:01
   - data:
       volume_level: 0.5
-      entity_id: media_player.home
+      entity_id: media_player.mary_and_max
     service: media_player.volume_set
 
 google_home_off:
   alias: Google Home OFF
   sequence:
   - data:
-      entity_id: media_player.home
+      entity_id: media_player.mary_and_max
     service: media_player.turn_off
 
 lights_off:
