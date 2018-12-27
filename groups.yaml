@@ -169,6 +169,7 @@ gadgets_status:
   entities:
     - sensor.arlo_q_online
     - sensor.google_home_online
+    - sensor.google_home_max_online
     - sensor.harmony_hub_online
     - sensor.nest_thermostat_online
     - sensor.nest_protect_online
