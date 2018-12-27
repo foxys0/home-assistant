@@ -131,8 +131,8 @@ notify:
 
 remote:
   - platform: harmony
-    name: TV
-    activity: Watch TV
+    name: Harmony Hub
+    host: !secret harmony_ip
 
 shopping_list:
 
