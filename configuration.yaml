@@ -89,6 +89,7 @@ google:
 #    - climate
 #    - script
 
+hassio:
 # Enables support for tracking state changes over time
 history:
 
