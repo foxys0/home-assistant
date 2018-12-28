@@ -37,9 +37,9 @@ switch: !include switch.yaml
 #      - torch
 #      - video_recording
 
-#arlo:
-#  username: !secret arlo_email
-#  password: !secret arlo_password
+arlo:
+  username: !secret arlo_email
+  password: !secret arlo_password
 
 camera:
   - platform: arlo
