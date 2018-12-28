@@ -172,7 +172,7 @@
         value_template: '{{ (states.sensor.hallway_motion_sensor.attributes.temperature + 2.1) | round(1) }}'
         unit_of_measurement: °C
       temperature_kitchen:
-        value_template: '{{ (states.sensor.kitchen_motion_sensor.attributes.temperature + 2.8) | round(1) }}'
+        value_template: '{{ (states.sensor.kitchen_motion_sensor.attributes.temperature + 1.6) | round(1) }}'
         unit_of_measurement: °C
       temperature_toilet:
         value_template: '{{ (states.sensor.toilet_motion_sensor.attributes.temperature + 1.6) | round(1) }}'
