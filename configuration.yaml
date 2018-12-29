@@ -100,7 +100,7 @@ ifttt:
   key: !secret ifttt
 
 # View all events in a logbook
-logbook:
+#logbook:
 
 # Logging level
 logger:
