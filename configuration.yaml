@@ -122,6 +122,9 @@ notify:
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
 
+recorder:
+  purge_keep_days: 32
+
 remote:
   - platform: harmony
     name: Harmony Hub
