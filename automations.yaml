@@ -216,6 +216,28 @@
   - entity_id: sensor.philips_hue_switch_changed
     platform: state
 
+#LIGHTS unavailable
+- action:
+  - data:
+      entity_id: script.google_home_on
+    service: script.turn_on
+  - data:
+      entity_id: media_player.mary_and_max
+      message: "Some lights are unavailable"
+      language: "en-uk"
+    service: tts.google_say
+  - delay: 00:00:15
+  - data:
+      entity_id: script.google_home_off
+    service: script.turn_on
+  alias: Lights unavailable
+  id: lights_unavailable
+  trigger:
+  - entity_id: binary_sensor.lights_unavailable
+    from: 'off'
+    platform: state
+    to: 'on'
+
 #SET AWAY by wifi connection
 - action:
   - data:
