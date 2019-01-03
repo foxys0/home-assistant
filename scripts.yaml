@@ -119,7 +119,7 @@ google_home_on:
     service: media_player.turn_on
   - delay: 00:00:01
   - data:
-      volume_level: 0.5
+      volume_level: 0.4
       entity_id: media_player.mary_and_max
     service: media_player.volume_set
 
