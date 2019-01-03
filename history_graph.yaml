@@ -42,9 +42,9 @@ temperature:
 usage:
   name: Usage
   entities:
-    - sensor.light_living_room_length
-  hours_to_show: 24
-  refresh: 168 #7 days
+    - sensor.usage_thermostat
+  hours_to_show: 168 #7 days
+  refresh: 43200 #1/2 day
 
 washing_machine:
   name: "Washing machine"
