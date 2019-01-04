@@ -231,6 +231,11 @@
       entity_id: script.google_home_off
     service: script.turn_on
   alias: Lights unavailable
+  condition:
+    - condition: sun
+      after: sunrise
+    - condition: sun
+      before: sunset
   id: lights_unavailable
   trigger:
   - entity_id: binary_sensor.lights_unavailable
@@ -365,10 +370,10 @@
     service: script.turn_on
   alias: HASS update (voice)
   condition:
-  - condition: sun
-    after: sunrise
-  - condition: sun
-    before: sunset
+    - condition: sun
+      after: sunrise
+    - condition: sun
+      before: sunset
   id: hass_update_voice
   trigger:
   - platform: state
