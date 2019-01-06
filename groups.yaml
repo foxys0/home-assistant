@@ -119,6 +119,7 @@ buttons:
 
 camera:
   name: Camera
+  control: hidden
   entities:
     - sensor.arlo_cameras
     - sensor.captured_today_camberbatch
