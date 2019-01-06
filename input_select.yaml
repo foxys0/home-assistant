@@ -23,7 +23,17 @@ temp_high:
   icon: mdi:arrow-collapse-up
   initial: "19"
   options:
+    - "20.5"
     - "20.0"
+    - "19.5"
+    - "19.0"
+    - "18.5"
+
+temp_base:
+  name: Base temperature
+  icon: mdi:arrow-collapse-vertical
+  initial: "18"
+  options:
     - "19.5"
     - "19.0"
     - "18.5"
