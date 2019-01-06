@@ -21,7 +21,7 @@ alarm:
 temp_high:
   name: High temperature
   icon: mdi:arrow-collapse-up
-  initial: "19"
+  initial: "19.0"
   options:
     - "20.5"
     - "20.0"
@@ -32,7 +32,7 @@ temp_high:
 temp_base:
   name: Base temperature
   icon: mdi:arrow-collapse-vertical
-  initial: "18"
+  initial: "18.0"
   options:
     - "19.5"
     - "19.0"
