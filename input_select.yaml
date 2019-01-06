@@ -3,7 +3,7 @@
 alarm:
   name: Time
   icon: mdi:alarm
-  initial: "07:40"
+  initial: "07:30"
   options:
     - "07:00"
     - "07:05"
@@ -21,7 +21,7 @@ alarm:
 temp_high:
   name: High temperature
   icon: mdi:arrow-collapse-up
-  initial: "18.5"
+  initial: "19"
   options:
     - "20.0"
     - "19.5"
@@ -43,7 +43,7 @@ temp_low:
 temp_night:
   name: Night temperature
   icon: mdi:weather-night
-  initial: "17.5"
+  initial: "16.5"
   options:
     - "18.5"
     - "18.0"
