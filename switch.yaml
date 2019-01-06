@@ -22,7 +22,7 @@
   disable_brightness_adjust: True
   mode: mired
   transition: 30
-  interval: 130
+  interval: 60
 
 #- platform: rest
 #  name: kitchen_motion_sensor
@@ -31,16 +31,16 @@
 #  body_off: '{"is_active": "false"}'
 #  is_on_template: '{{value_json.config.on}}'
 
-- platform: template
-  switches:
-    arlo_toggle:
-      friendly_name: Camera
-      value_template: "{{ 1==1 }}"
-      turn_on:
-        service: script.turn_on
-        data:
-          entity_id: script.arm_arlo
-      turn_off:
-        service: script.turn_off
-        data:
-          entity_id: script.disarm_arlo
+#- platform: template
+#  switches:
+#    arlo_toggle:
+#      friendly_name: Camera
+#      value_template: "{{ 1==1 }}"
+#      turn_on:
+#        service: script.turn_on
+#        data:
+#          entity_id: script.arm_arlo
+#      turn_off:
+#        service: script.turn_off
+#        data:
+#          entity_id: script.disarm_arlo
