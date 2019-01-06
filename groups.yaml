@@ -269,6 +269,7 @@ temperature_values:
   icon: mdi:settings
   entities:
     - input_select.temp_high
+    - input_select.temp_base
     - input_select.temp_low
     - input_select.temp_night
 
