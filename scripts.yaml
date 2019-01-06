@@ -223,6 +223,11 @@ temperature_high:
       temperature: "{{ states.input_select.temp_high.state | float }}"
       entity_id: climate.living_room
     service: climate.set_temperature
+  - delay: 00:15:00
+  - data_template:
+      temperature: "{{ states.input_select.temp_base.state | float }}"
+      entity_id: climate.living_room
+    service: climate.set_temperature
 
 temperature_low:
   alias: Cool down
