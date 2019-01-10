@@ -215,7 +215,8 @@ light:
   name: Lights
   entities:
     - light.living_room
-    - light.upstairs
+    - light.office
+#    - light.bedroom
     - light.kitchen
     - light.bathroom
     - light.toilet
@@ -295,6 +296,7 @@ upstairs:
   icon: mdi:lightbulb
   entities:
     - light.office
+#    - light.bedroom
 
 weather:
   name: Weather
