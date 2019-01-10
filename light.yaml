@@ -34,3 +34,4 @@
     devices:
       !secret yeelight_ledstrip:
         name: Bedroom
+        model: strip1
