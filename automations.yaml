@@ -1,3 +1,15 @@
+#HASS STARTUP
+- action:
+  - data:
+      entity_id: switch.fluxer
+    service: switch.turn_on
+  alias: HASS STARTUP
+  condition: []
+  id: camera_by_calendar
+  trigger:
+    - platform: homeassistant
+      event: start
+
 #ALARM by light (-20min)
 - action:
   - data:
