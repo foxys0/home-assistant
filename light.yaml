@@ -29,3 +29,8 @@
     name: Toilet
     entities:
       - light.wc
+
+  - platform: yeelight
+    devices:
+      !secret yeelight_ledstrip:
+        name: Bedroom
