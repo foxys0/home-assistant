@@ -12,3 +12,5 @@ My configuration for Home Assistant running on Raspberry Pi 3.
 * Nokia Scale
 * NVidia Shield
 * Philips Hue
+* Playstation
+* Yeelight LED strip
