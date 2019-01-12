@@ -16,7 +16,7 @@
       entity_id: switch.fluxer
     service: switch.turn_off
   - data:
-      entity_id: script.fade_in
+      entity_id: script.fade_in_upstairs
     service: script.turn_on
   - data:
       entity_id: switch.fluxer
