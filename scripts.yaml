@@ -48,8 +48,8 @@ energize:
       entity_id: light.bathroom
     service: light.turn_on
 
-fade_in:
-  alias: Fade in
+fade_in_office:
+  alias: Fade in office
   sequence:
   - data:
       brightness: 10
@@ -58,16 +58,44 @@ fade_in:
     service: light.turn_on
   - data:
       brightness: 160
-      color_temp: 454
       entity_id: light.office
-      transition: 600
+    service: light.turn_on
+  - data:
+      brightness: 255
+      color_temp: 154
+      entity_id: light.office
+      transition: 600 #10min
+    service: light.turn_on
+
+fade_in_bedroom:
+  alias: Fade in bedroom
+  sequence:
+  - data:
+      brightness: 10
+      hs_color: [255, 147, 41]
+      entity_id: light.bedroom
     service: light.turn_on
   - data:
       brightness: 160
-      color_temp: 154
-      entity_id: light.office
-      transition: 600
+      entity_id: light.bedroom
+      transition: 600 #10min
     service: light.turn_on
+  - data:
+      brightness: 255
+      hs_color: [100, 200, 255]
+      entity_id: light.bedroom
+      transition: 600 #10min
+    service: light.turn_on
+
+fade_in_upstairs:
+  alias: Fade in upstairs
+  sequence:
+  - data:
+      entity_id: script.fade_in_office
+    service: script.turn_on
+  - data:
+      entity_id: script.fade_in_bedroom
+    service: script.turn_on
 
 fade_out:
   alias: Fade out
