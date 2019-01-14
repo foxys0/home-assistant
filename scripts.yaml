@@ -71,17 +71,17 @@ fade_in_bedroom:
   alias: Fade in bedroom
   sequence:
   - data:
-      brightness: 10
+      brightness: 5
       rgb_color: [255, 147, 41]
       entity_id: light.bedroom
     service: light.turn_on
   - data:
-      brightness: 160
+      brightness: 60
       entity_id: light.bedroom
       transition: 600 #10min
     service: light.turn_on
   - data:
-      brightness: 255
+      brightness: 80
       rgb_color: [100, 200, 255]
       entity_id: light.bedroom
       transition: 600 #10min
