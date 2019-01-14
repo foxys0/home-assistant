@@ -72,7 +72,7 @@ fade_in_bedroom:
   sequence:
   - data:
       brightness: 10
-      hs_color: [255, 147, 41]
+      rgb_color: [255, 147, 41]
       entity_id: light.bedroom
     service: light.turn_on
   - data:
@@ -82,7 +82,7 @@ fade_in_bedroom:
     service: light.turn_on
   - data:
       brightness: 255
-      hs_color: [100, 200, 255]
+      rgb_color: [100, 200, 255]
       entity_id: light.bedroom
       transition: 600 #10min
     service: light.turn_on
