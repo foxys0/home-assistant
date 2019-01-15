@@ -57,11 +57,13 @@ fade_in_office:
       entity_id: light.office
     service: light.turn_on
   - data:
-      brightness: 160
+      brightness: 100
+      color_temp: 454
       entity_id: light.office
+      transition: 600 #10min
     service: light.turn_on
   - data:
-      brightness: 255
+      brightness: 220
       color_temp: 154
       entity_id: light.office
       transition: 600 #10min
@@ -76,15 +78,28 @@ fade_in_bedroom:
       entity_id: light.bedroom
     service: light.turn_on
   - data:
-      brightness: 60
+      brightness: 10
+      rgb_color: [255, 197, 143]
       entity_id: light.bedroom
-      transition: 600 #10min
+      transition: 300 #5min
     service: light.turn_on
   - data:
-      brightness: 80
+      brightness: 10
+      rgb_color: [255, 241, 224]
+      entity_id: light.bedroom
+      transition: 300 #5min
+    service: light.turn_on
+  - data:
+      brightness: 15
+      rgb_color: [255, 255, 251]
+      entity_id: light.bedroom
+      transition: 300 #5min
+    service: light.turn_on
+  - data:
+      brightness: 20
       rgb_color: [100, 200, 255]
       entity_id: light.bedroom
-      transition: 600 #10min
+      transition: 300 #5min
     service: light.turn_on
 
 fade_in_upstairs:
