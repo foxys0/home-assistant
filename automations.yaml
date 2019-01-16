@@ -18,6 +18,7 @@
   - data:
       entity_id: script.fade_in_upstairs
     service: script.turn_on
+  - delay: 00:20:00
   - data:
       entity_id: switch.fluxer
     service: switch.turn_on
