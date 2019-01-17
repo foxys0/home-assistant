@@ -137,8 +137,8 @@ fade_out:
     service: light.turn_on
   - delay: 00:30:00
   - data:
-      entity_id: group.all_lights
-    service: light.turn_off
+      entity_id: script.lights_off
+    service: script.turn_on
 
 good_night:
   alias: Good night
