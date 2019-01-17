@@ -103,7 +103,7 @@ alarm:
 
 bathroom:
   name: Bathroom
-  icon: mdi:lightbulb
+  icon: mdi:shower
   entities:
     - light.bathroom_left
     - light.bathroom_right
@@ -179,7 +179,7 @@ gadgets_status:
 
 hallway:
   name: Hallway
-  icon: mdi:lightbulb
+  icon: mdi:shoe-formal
   entities:
     - light.hall
 
@@ -204,7 +204,7 @@ inside_temperature:
 
 kitchen:
   name: Kitchen
-  icon: mdi:lightbulb
+  icon: mdi:kettle
   entities:
     - light.kitchen_left_left
     - light.kitchen_left
@@ -214,17 +214,17 @@ kitchen:
 light:
   name: Lights
   entities:
+    - light.lamp
     - light.living_room
     - light.office
     - light.bedroom
-    - light.kitchen
     - light.bathroom
-    - light.toilet
 
 living_room:
   name: Living room
-  icon: mdi:lightbulb
+  icon: mdi:sofa
   entities:
+    - light.lamp
     - light.angel
     - light.left
     - light.middle
@@ -287,13 +287,13 @@ thermostat:
 
 toilet:
   name: Toilet
-  icon: mdi:lightbulb
+  icon: mdi:toilet
   entities:
     - light.wc
 
 upstairs:
   name: Upstairs
-  icon: mdi:lightbulb
+  icon: mdi:hotel
   entities:
     - light.office
     - light.bedroom
