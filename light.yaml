@@ -10,6 +10,7 @@
     name: Upstairs
     entities:
       - light.office
+      - light.bedroom
 
   - platform: group
     name: Kitchen
