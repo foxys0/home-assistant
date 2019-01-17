@@ -17,7 +17,7 @@ light.kitchen:
   icon: mdi:kettle
 
 light.lamp:
-  icon: mdi:floor-lamp
+  icon: mdi:lamp
 
 light.living_room:
   icon: mdi:sofa
