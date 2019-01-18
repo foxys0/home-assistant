@@ -86,14 +86,14 @@ fade_in_bedroom:
     service: light.turn_on
   - delay: 00:05:00
   - data:
-      brightness: 10
+      brightness: 5
       rgb_color: [255, 241, 224]
       entity_id: light.bedroom
       transition: 300 #5min
     service: light.turn_on
   - delay: 00:05:00
   - data:
-      brightness: 15
+      brightness: 5
       rgb_color: [255, 255, 251]
       entity_id: light.bedroom
       transition: 300 #5min
