@@ -74,10 +74,10 @@ google_assistant:
   api_key: !secret google_assistant_api
   exposed_domains:
     - switch
-#    - light
+    - light
+    - script
+    - climate
 #    - group
-#    - climate
-#    - script
 
 hassio:
 # Enables support for tracking state changes over time
