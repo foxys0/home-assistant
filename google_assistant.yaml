@@ -1,0 +1,126 @@
+project_id: !secret google_assistant_project_id
+api_key: !secret google_assistant_api
+expose_by_default: false
+entity_config:
+  switch.fluxer:
+    name: Flux
+    aliases:
+      - flux
+      - lights temperature
+    expose: true
+  switch.washing_machine_switch:
+    name: Washing machine
+    aliases:
+      - washing machine
+      - laundry
+    expose: true
+    room: Bathroom
+  script.fade_out:
+    name: Fade out
+    aliases:
+      - fade out
+      - i am sleeping alone
+      - i am scared
+    expose: true
+    room: Office
+  script.good_night:
+    name: Good night
+    aliases:
+      - good night
+    expose: true
+    room: Bedroom
+  script.night_toilet:
+    name: Night toilet
+    aliases:
+      - night toilet
+      - i need to pee
+    expose: true
+    room: Toilet
+  script.remote_playstation:
+    name: Playstation
+    aliases:
+      - playstation
+    expose: true
+    room: Living room
+  script.remote_television:
+    name: TV
+    aliases:
+      - tv
+      - television
+    expose: true
+    room: Living room
+  script.temperature_high:
+    name: Warm up
+    aliases:
+      - warm up
+      - i am freezing
+      - heat up
+    expose: true
+    room: Living room
+  script.temperature_low:
+    name: Cool down
+    aliases:
+      - cool down
+      - i am hot
+      - it is hot there
+      - heat off
+    expose: true
+    room: Living room
+  light.bathroom:
+    name: Bathroom
+    aliases:
+      - bathroom
+      - shower
+    expose: true
+    room: Bathroom
+  light.bedroom:
+    name: Bedroom
+    aliases:
+      - bedroom
+      - bed
+    expose: true
+    room: Bedroom
+  light.hallway:
+    name: Hallway
+    aliases:
+      - hallway
+      - hall
+    expose: true
+    room: Hallway
+  light.kitchen:
+    name: Kitchen
+    aliases:
+      - kitchen
+    expose: true
+    room: Kitchen
+  light.lamp:
+    name: Lamp
+    aliases:
+      - lamp
+      - living room lamp
+    expose: true
+    room: Living room
+  light.living_room:
+    name: Living room
+    aliases:
+      - Living room
+    expose: true
+    room: Living room
+  light.office:
+    name: Office
+    aliases:
+      - office
+    expose: true
+    room: Upstairs
+  light.upstairs:
+    name: Upstairs
+    aliases:
+      - upstairs
+    expose: true
+    room: Upstairs
+  light.toilet:
+    name: Toilet
+    aliases:
+      - toilet
+    expose: true
+    room: Toilet
