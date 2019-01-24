@@ -10,6 +10,7 @@ homeassistant:
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
 frontend: !include frontend.yaml
+google_assistant: !include google_assistant.yaml
 group: !include groups.yaml
 history_graph: !include history_graph.yaml
 input_boolean: !include input_boolean.yaml
