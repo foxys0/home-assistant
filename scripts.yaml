@@ -198,6 +198,9 @@ lights_off:
   - data:
       entity_id: light.upstairs
     service: light.turn_off
+  - data:
+      entity_id: light.lamp
+    service: light.turn_off
 
 night_toilet:
   alias: Night toilet
