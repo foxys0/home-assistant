@@ -21,8 +21,8 @@ script: !include scripts.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
 
-alarm_control_panel:
-  - platform: arlo
+#alarm_control_panel:
+#  - platform: arlo
 
 #android_ip_webcam:
 #  - host: !secret android_ip_webcam
@@ -68,17 +68,6 @@ ffmpeg:
 google:
   client_id: !secret google_id
   client_secret: !secret google_secret
-
-# Used for Google Assistant
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  api_key: !secret google_assistant_api
-  exposed_domains:
-    - switch
-    - light
-    - script
-    - climate
-#    - group
 
 hassio:
 # Enables support for tracking state changes over time
