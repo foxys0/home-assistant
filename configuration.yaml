@@ -112,10 +112,10 @@ notify:
 recorder:
   purge_keep_days: 32
 
-remote:
-  - platform: harmony
-    name: Harmony Hub
-    host: !secret harmony_ip
+#remote:
+#  - platform: harmony
+#    name: Harmony Hub
+#    host: !secret harmony_ip
 
 shopping_list:
 
