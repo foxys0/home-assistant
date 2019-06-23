@@ -3,6 +3,10 @@
   - data:
       entity_id: switch.fluxer
     service: switch.turn_on
+  - data:
+      visible: false
+    service: group.set_visibility
+    entity_id: group.thermostat
   alias: HASS STARTUP
   condition: []
   id: camera_by_calendar
