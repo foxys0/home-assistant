@@ -80,6 +80,10 @@ sensor.google_home_online:
   icon: mdi:google-home
   friendly_name: Google Home
 
+sensor.google_home_hub_online:
+  icon: mdi:television
+  friendly_name: Google Home Hub
+
 sensor.google_home_max_online:
   icon: mdi:speaker
   friendly_name: Google Home Max
