@@ -47,8 +47,8 @@
       entity_id: script.google_home_on
     service: script.turn_on
   - data:
-      entity_id: media_player.mary_and_max
-      message: "Wake up you lazy bitches"
+      entity_id: media_player.max
+      message: "Wake up you lazy bitch"
       language: "en-uk"
     service: tts.google_say
   - delay: 00:01:00
@@ -245,7 +245,7 @@
 #      entity_id: script.google_home_on
 #    service: script.turn_on
 #  - data:
-#      entity_id: media_player.mary_and_max
+#      entity_id: media_player.max
 #      message: "Some lights are unavailable"
 #      language: "en-uk"
 #    service: tts.google_say
@@ -293,7 +293,7 @@
       entity_id: script.google_home_on
     service: script.turn_on
   - data:
-      entity_id: media_player.mary_and_max
+      entity_id: media_player.max
       message: "Welcome home"
       language: "en-uk"
     service: tts.google_say
@@ -378,29 +378,29 @@
     entity_id: updater.updater
 
 # HOME ASSISTANT update by voice
-- action:
-  - data:
-      entity_id: script.google_home_on
-    service: script.turn_on
-  - data:
-      entity_id: media_player.mary_and_max
-      message: "Update for Home Assistant is ready"
-      language: "en-uk"
-    service: tts.google_say
-  - delay: 00:00:15
-  - data:
-      entity_id: script.google_home_off
-    service: script.turn_on
-  alias: HASS update (voice)
-  condition:
-    - condition: sun
-      after: sunrise
-    - condition: sun
-      before: sunset
-  id: hass_update_voice
-  trigger:
-  - platform: state
-    entity_id: updater.updater
+#- action:
+#  - data:
+#      entity_id: script.google_home_on
+#    service: script.turn_on
+#  - data:
+#      entity_id: media_player.max
+#      message: "Update for Home Assistant is ready"
+#      language: "en-uk"
+#    service: tts.google_say
+#  - delay: 00:00:15
+#  - data:
+#      entity_id: script.google_home_off
+#    service: script.turn_on
+#  alias: HASS update (voice)
+#  condition:
+#    - condition: sun
+#      after: sunrise
+#    - condition: sun
+#      before: sunset
+#  id: hass_update_voice
+#  trigger:
+#  - platform: state
+#    entity_id: updater.updater
 
 #PLAYSTATION toggle ON by input
 - action:
@@ -541,7 +541,7 @@
       entity_id: script.google_home_on
     service: script.turn_on
   - data:
-      entity_id: media_player.mary_and_max
+      entity_id: media_player.max
       message: "The laundry is ready"
       language: "en-uk"
     service: tts.google_say
