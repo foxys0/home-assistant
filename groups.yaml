@@ -168,6 +168,7 @@ gadgets_status:
   entities:
     - sensor.arlo_q_online
     - sensor.google_home_online
+    - sensor.google_home_hub_online
     - sensor.google_home_max_online
     - sensor.harmony_hub_online
     - sensor.nest_thermostat_online
@@ -234,8 +235,7 @@ media:
   name: Media
   icon: mdi:play-circle
   entities:
-    - media_player.mary_and_max
-    - media_player.mary
+    - media_player.speakers
     - media_player.max
     - media_player.shield
 
